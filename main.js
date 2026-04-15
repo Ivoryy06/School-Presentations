@@ -1,3 +1,15 @@
+// ── Suffering cards accordion ──
+document.querySelectorAll('.suffer-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const isActive = card.classList.contains('active');
+    document.querySelectorAll('.suffer-card').forEach(c => c.classList.remove('active'));
+    if (!isActive) card.classList.add('active');
+  });
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+  });
+});
+
 // ── Timeline accordion ──
 document.querySelectorAll('.timeline__item').forEach(item => {
   item.addEventListener('click', () => {

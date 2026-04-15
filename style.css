@@ -351,6 +351,66 @@ body {
   line-height: 1.75;
 }
 
+/* ── Suffering Slide ── */
+.slide--suffering {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 30%, #1a0e0e 0%, var(--dark) 65%);
+  overflow-y: auto;
+}
+
+.suffer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.suffer-card {
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: rgba(255,255,255,0.02);
+}
+.suffer-card:hover  { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+.suffer-card.active { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+.suffer-card__title {
+  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+  font-weight: normal;
+  color: var(--gold);
+  line-height: 1.4;
+}
+
+.suffer-card__expand {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+.suffer-card.active .suffer-card__expand {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.suffer-card__expand p {
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+  color: var(--light);
+  opacity: 0.7;
+  line-height: 1.8;
+  margin-top: 0.65rem;
+}
+
+.suffer-card__verse {
+  font-style: italic;
+  color: var(--gold) !important;
+  opacity: 0.75 !important;
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 0.6rem;
+  margin-top: 0.5rem !important;
+}
+
 /* ── Fullscreen scaling ── */
 :fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
 :fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }
