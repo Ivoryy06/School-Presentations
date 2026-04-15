@@ -89,15 +89,14 @@ body {
 }
 
 /* Trinity layout */
-.slide__trinity {
-  position: absolute;
-  inset: 0;
+.slide__title-layout {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3vw;
-  padding: 0 2%;
-  pointer-events: none;
+  gap: 2vw;
+  width: 100%;
+  padding: 0 3%;
 }
 
 .slide__trinity-symbol,
@@ -106,6 +105,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
+}
+
+.slide__trinity-cross {
+  margin-bottom: 0.75rem;
 }
 
 .slide__greek-svg {
