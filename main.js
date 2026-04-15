@@ -121,11 +121,3 @@ document.addEventListener('keydown', e => {
 });
 
 goTo(0);
-
-// ── Touch swipe ──
-let touchStartX = 0;
-document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-document.addEventListener('touchend', e => {
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(dx) > 40) dx < 0 ? nextBtn.click() : prevBtn.click();
-}, { passive: true });

@@ -216,11 +216,11 @@ body {
   background: none;
   border: 1px solid var(--gold-dim);
   color: var(--gold);
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: background 0.2s, opacity 0.2s;
 }
 .nav__btn:hover:not(:disabled) { background: var(--gold-dim); }
