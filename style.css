@@ -441,7 +441,7 @@ body {
 .tokoh-chip--raja    { color: #b85555; border-color: #b8555533; background: rgba(184,85,85,0.07); }
 
 /* ── Character Slides ── */
-.slide--character {
+.slide--character.active {
   display: flex;
   flex-direction: row;
   overflow: hidden;
