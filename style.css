@@ -263,14 +263,13 @@ body {
 .timeline {
   list-style: none;
   display: flex;
-  align-items: center;
   position: relative;
   padding: 0;
   width: 100%;
-  overflow-x: auto;
+  height: 220px;
 }
 
-/* horizontal line */
+/* horizontal line through the middle */
 .timeline::before {
   content: '';
   position: absolute;
@@ -279,7 +278,6 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
-  transform: translateY(-50%);
 }
 
 .timeline__item {
@@ -290,24 +288,14 @@ body {
   min-width: 0;
   cursor: pointer;
   position: relative;
+  height: 100%;
 }
 
-/* odd items: label above line, dot on line */
-.timeline__item:nth-child(odd) { flex-direction: column; padding-bottom: calc(50% + 0.3rem); }
-.timeline__item:nth-child(even) { flex-direction: column-reverse; padding-top: calc(50% + 0.3rem); }
-
-.timeline__item:nth-child(odd) .timeline__body   { order: 1; margin-bottom: 0.25rem; }
-.timeline__item:nth-child(odd) .timeline__dot    { order: 2; }
-.timeline__item:nth-child(even) .timeline__body  { order: 1; margin-top: 0.25rem; }
-.timeline__item:nth-child(even) .timeline__dot   { order: 2; }
-
-.timeline__item:hover .timeline__heading { color: #e8c96a; }
-
-.timeline__body { text-align: center; padding: 0 0.25rem; }
-
-.timeline__expand { display: none; }
-
+/* dot sits exactly on the line */
 .timeline__dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -321,18 +309,32 @@ body {
   box-shadow: 0 0 12px rgba(201,168,76,0.8);
 }
 
+/* body: odd = top half, even = bottom half */
+.timeline__body {
+  position: absolute;
+  width: 100%;
+  padding: 0 0.3rem;
+  text-align: center;
+}
+.timeline__item:nth-child(odd) .timeline__body  { bottom: 50%; padding-bottom: 0.6rem; }
+.timeline__item:nth-child(even) .timeline__body { top: 50%;    padding-top: 0.6rem; }
+
+.timeline__item:hover .timeline__heading { color: #e8c96a; }
+
+.timeline__expand { display: none; }
+
 .timeline__heading {
-  font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+  font-size: clamp(0.65rem, 1.1vw, 0.9rem);
   font-weight: normal;
   color: var(--gold);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
   letter-spacing: 0.03em;
 }
 
 .timeline__year { display: none; }
 
 .timeline__desc {
-  font-size: clamp(0.6rem, 1vw, 0.78rem);
+  font-size: clamp(0.55rem, 0.9vw, 0.72rem);
   color: var(--light);
   opacity: 0.55;
   line-height: 1.4;
