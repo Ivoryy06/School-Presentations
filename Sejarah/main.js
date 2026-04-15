@@ -56,7 +56,8 @@ const nextBtn    = document.getElementById('next');
 const currentEl  = document.getElementById('current');
 const totalEl    = document.getElementById('total');
 const progressEl = document.getElementById('progress');
-const slides     = document.querySelectorAll('.slide');
+const allSlides  = document.querySelectorAll('.slide');
+const slides     = Array.from(allSlides).filter(s => !s.classList.contains('slide--detail'));
 
 let current = 0;
 
@@ -131,13 +132,16 @@ function goTo(index) {
 function goToDetail(detailId) {
   returnSlide = current;
   const detailSlide = document.getElementById(detailId);
-  const detailIndex = Array.from(slides).indexOf(detailSlide);
-  if (detailIndex !== -1) goTo(detailIndex);
+  allSlides[current].classList.remove('active');
+  detailSlide.classList.add('active');
+  triggerTransition(detailSlide);
 }
 
 function backToMain() {
   if (returnSlide !== null) {
-    goTo(returnSlide);
+    document.querySelector('.slide.active').classList.remove('active');
+    slides[returnSlide].classList.add('active');
+    triggerTransition(slides[returnSlide]);
     returnSlide = null;
   }
 }
