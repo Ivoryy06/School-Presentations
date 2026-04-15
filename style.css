@@ -99,6 +99,20 @@ body {
   padding: 0 3%;
 }
 
+.slide__center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slide__cross-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .slide__trinity-symbol,
 .slide__trinity-cross {
   display: flex;
@@ -107,8 +121,39 @@ body {
   gap: 0.6rem;
 }
 
-.slide__trinity-cross {
-  margin-bottom: 0.75rem;
+.slide__passion-symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.slide__passion-svg {
+  width: clamp(3rem, 7vw, 6rem);
+  opacity: 0.15;
+  stroke: var(--gold);
+  fill: none;
+  animation: trinity-glow 4s ease-in-out infinite;
+}
+
+.slide__passion-svg polygon {
+  fill: var(--gold);
+  stroke: none;
+}
+
+/* Cross behind content */
+.slide__cross {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(120px, 18vw, 220px);
+  pointer-events: none;
+  animation: trinity-glow 4s ease-in-out infinite;
+}
+
+.slide__cross rect {
+  fill: var(--gold);
 }
 
 .slide__greek-svg {
@@ -121,15 +166,7 @@ body {
   fill: var(--gold);
 }
 
-.slide__trinity-cross svg {
-  width: clamp(120px, 18vw, 220px);
-  opacity: 0.15;
-  animation: trinity-glow 4s ease-in-out infinite;
-}
 
-.slide__trinity-cross svg rect {
-  fill: var(--gold);
-}
 
 .slide__trinity-label {
   font-size: clamp(0.55rem, 1vw, 0.8rem);
