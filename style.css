@@ -315,7 +315,7 @@ body {
 }
 
 .timeline__item.active .timeline__expand {
-  max-height: 600px;
+  max-height: 1000px;
   opacity: 1;
 }
 
