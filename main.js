@@ -45,6 +45,7 @@ const nextBtn = document.getElementById('next');
 const currentEl = document.getElementById('current');
 const totalEl = document.getElementById('total');
 const progressEl = document.getElementById('progress');
+const slides = document.querySelectorAll('.slide');
 
 let current = 0;
 
