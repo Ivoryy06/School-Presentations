@@ -253,12 +253,12 @@ body {
 .timeline__item:hover .timeline__heading { color: #6abfaa; }
 .timeline__expand { display: none; }
 .timeline__heading {
-  font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
   font-weight: normal; color: var(--teal);
   margin-bottom: 0.2rem; letter-spacing: 0.03em;
 }
 .timeline__desc {
-  font-size: clamp(0.55rem, 0.9vw, 0.72rem);
+  font-size: clamp(0.72rem, 1.2vw, 0.95rem);
   color: var(--light); opacity: 0.55;
   line-height: 1.4; text-align: center;
 }
@@ -387,6 +387,56 @@ body {
 .slide--ali         .character__name, .slide--ali         .character__verse { color: #8aab8a; }
 .slide--ali         .character__role { color: #8aab8a; }
 .slide--ali         .character__verse { border-color: #8aab8a55; }
+
+/* Ulama */
+.slide--hamzah    { background: radial-gradient(ellipse at 60% 50%, #0e1208 0%, var(--dark) 65%); }
+.slide--hamzah    .character__name, .slide--hamzah    .character__verse { color: #a8c87a; }
+.slide--hamzah    .character__role { color: #a8c87a; }
+.slide--hamzah    .character__verse { border-color: #a8c87a55; }
+.slide--hamzah    .character__img-placeholder { color: #a8c87a; }
+
+.slide--syamsuddin { background: radial-gradient(ellipse at 60% 50%, #080e18 0%, var(--dark) 65%); }
+.slide--syamsuddin .character__name, .slide--syamsuddin .character__verse { color: #7ab4d6; }
+.slide--syamsuddin .character__role { color: #7ab4d6; }
+.slide--syamsuddin .character__verse { border-color: #7ab4d655; }
+.slide--syamsuddin .character__img-placeholder { color: #7ab4d6; }
+
+.slide--raniri    { background: radial-gradient(ellipse at 60% 50%, #180e08 0%, var(--dark) 65%); }
+.slide--raniri    .character__name, .slide--raniri    .character__verse { color: #d6a07a; }
+.slide--raniri    .character__role { color: #d6a07a; }
+.slide--raniri    .character__verse { border-color: #d6a07a55; }
+.slide--raniri    .character__img-placeholder { color: #d6a07a; }
+
+.slide--singkili  { background: radial-gradient(ellipse at 60% 50%, #0e0818 0%, var(--dark) 65%); }
+.slide--singkili  .character__name, .slide--singkili  .character__verse { color: #b07ad6; }
+.slide--singkili  .character__role { color: #b07ad6; }
+.slide--singkili  .character__verse { border-color: #b07ad655; }
+.slide--singkili  .character__img-placeholder { color: #b07ad6; }
+
+/* Diplomasi */
+.slide--inggris   { background: radial-gradient(ellipse at 60% 50%, #0a0e18 0%, var(--dark) 65%); }
+.slide--inggris   .character__name, .slide--inggris   .character__verse { color: #7a9ed6; }
+.slide--inggris   .character__role { color: #7a9ed6; }
+.slide--inggris   .character__verse { border-color: #7a9ed655; }
+.slide--inggris   .character__img-placeholder { color: #7a9ed6; font-size: 4rem; }
+
+.slide--utsmani   { background: radial-gradient(ellipse at 60% 50%, #0e1208 0%, var(--dark) 65%); }
+.slide--utsmani   .character__name, .slide--utsmani   .character__verse { color: #8ac87a; }
+.slide--utsmani   .character__role { color: #8ac87a; }
+.slide--utsmani   .character__verse { border-color: #8ac87a55; }
+.slide--utsmani   .character__img-placeholder { color: #8ac87a; font-size: 5rem; }
+
+.slide--voc       { background: radial-gradient(ellipse at 60% 50%, #180808 0%, var(--dark) 65%); }
+.slide--voc       .character__name, .slide--voc       .character__verse { color: #d67a7a; }
+.slide--voc       .character__role { color: #d67a7a; }
+.slide--voc       .character__verse { border-color: #d67a7a55; }
+.slide--voc       .character__img-placeholder { color: #d67a7a; font-size: 2.5rem; letter-spacing: 0.1em; }
+
+.slide--timteng   { background: radial-gradient(ellipse at 60% 50%, #18140a 0%, var(--dark) 65%); }
+.slide--timteng   .character__name, .slide--timteng   .character__verse { color: #d6c07a; }
+.slide--timteng   .character__role { color: #d6c07a; }
+.slide--timteng   .character__verse { border-color: #d6c07a55; }
+.slide--timteng   .character__img-placeholder { color: #d6c07a; font-size: 4rem; }
 
 /* ── Flag/background image ── */
 .castle-bg {
