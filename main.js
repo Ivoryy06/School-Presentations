@@ -122,52 +122,10 @@ document.addEventListener('keydown', e => {
 
 goTo(0);
 
-// ── Mobile Swipe Support ──
+// ── Touch swipe ──
 let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 40) dx < 0 ? nextBtn.click() : prevBtn.click();
 }, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50; // Minimum pixels moved to trigger a slide
-  if (touchEndX < touchStartX - swipeThreshold) {
-    // Swiped left -> Next slide
-    nextBtn.click();
-  }
-  if (touchEndX > touchStartX + swipeThreshold) {
-    // Swiped right -> Previous slide
-    prevBtn.click();
-  }
-}
-
-// ── Mobile Swipe Support ──
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-document.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50; // Minimum pixels moved to trigger a slide
-  if (touchEndX < touchStartX - swipeThreshold) {
-    // Swiped left -> Next slide
-    nextBtn.click();
-  }
-  if (touchEndX > touchStartX + swipeThreshold) {
-    // Swiped right -> Previous slide
-    prevBtn.click();
-  }
-    }
