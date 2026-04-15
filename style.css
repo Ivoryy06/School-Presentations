@@ -599,6 +599,9 @@ body {
 :fullscreen .slide__body         { font-size: clamp(1rem, 2.2vw, 1.3rem); }
 :fullscreen .slide__verse        { font-size: clamp(1rem, 2vw, 1.2rem); }
 :fullscreen .slide__label        { font-size: 0.9rem; }
+:fullscreen .suffer-card__title  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
+:fullscreen .suffer-card__expand p { font-size: clamp(0.9rem, 1.5vw, 1rem); }
+:fullscreen .slide__body         { font-size: clamp(1rem, 1.8vw, 1.15rem); }
 
 /* ── Mobile: allow scrolling on small screens ── */
 @media (max-width: 768px) and (pointer: coarse) {

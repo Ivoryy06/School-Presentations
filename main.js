@@ -96,6 +96,8 @@ function triggerTransition(slide) {
       el.style.animationDelay = `${i * 80}ms`;
       setTimeout(() => el.classList.add('anim-rise'), i * 80);
     });
+  } else {
+    slide.querySelectorAll('.stagger-item').forEach(el => el.classList.add('anim-rise'));
   }
 }
 
