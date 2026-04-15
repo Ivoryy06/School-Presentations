@@ -131,7 +131,7 @@ body {
 .slide__passion-svg {
   width: clamp(5rem, 11vw, 10rem);
   opacity: 0.7;
-  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(600%) hue-rotate(5deg) brightness(90%);
+  color: var(--gold);
   animation: trinity-glow 4s ease-in-out infinite;
 }
 
@@ -140,10 +140,6 @@ body {
   opacity: 0.9;
 }
 
-.slide__passion-svg polygon {
-  fill: var(--gold);
-  stroke: none;
-}
 
 /* Cross behind content */
 .slide__cross {
