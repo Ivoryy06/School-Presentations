@@ -593,14 +593,14 @@ body {
 .stagger-item.anim-rise { opacity: 1; }
 
 /* ── Fullscreen scaling ── */
-:fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
-:fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }
-:fullscreen .slide__subtitle     { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
-:fullscreen .slide__body         { font-size: clamp(1rem, 1.8vw, 1.15rem); }
-:fullscreen .slide__verse        { font-size: clamp(1rem, 2vw, 1.2rem); }
-:fullscreen .slide__label        { font-size: 0.9rem; }
-:fullscreen .suffer-card__title  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
-:fullscreen .suffer-card__expand p { font-size: clamp(0.9rem, 1.5vw, 1rem); }
+:fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 7rem); }
+:fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 4.5rem); }
+:fullscreen .slide__subtitle     { font-size: clamp(1.1rem, 2.5vw, 2rem); }
+:fullscreen .slide__body         { font-size: clamp(1rem, 1.8vw, 1.6rem); }
+:fullscreen .slide__verse        { font-size: clamp(1rem, 2vw, 1.7rem); }
+:fullscreen .slide__label        { font-size: 1.1rem; }
+:fullscreen .suffer-card__title  { font-size: clamp(1rem, 1.8vw, 1.5rem); }
+:fullscreen .suffer-card__expand p { font-size: clamp(0.9rem, 1.5vw, 1.3rem); }
 :fullscreen .slide__content      { max-width: 90vw; padding: 1.25rem 2rem; }
 :fullscreen .slide__content--wide { max-width: 92vw; }
 
