@@ -104,21 +104,29 @@ function goTo(index) {
   current = index;
   const slide = slides[current];
   const t = slide.dataset.transition;
+  const isStagger = t === 'stagger-left' || t === 'stagger-up' || t === 'pop-stagger';
 
-  // For stagger transitions, prep items before making slide visible
-  if (t === 'stagger-left' || t === 'stagger-up' || t === 'pop-stagger') {
+  if (isStagger) {
     slide.querySelectorAll('.stagger-item').forEach(el => {
       el.classList.remove('anim-rise');
       el.style.animationDelay = '';
     });
+    // make slide invisible, add active, then trigger on next frame
+    slide.style.opacity = '0';
+    slide.classList.add('active');
+    requestAnimationFrame(() => {
+      slide.style.opacity = '';
+      triggerTransition(slide);
+    });
+  } else {
+    slide.classList.add('active');
+    triggerTransition(slide);
   }
 
-  slide.classList.add('active');
   currentEl.textContent = current + 1;
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === slides.length - 1;
   progressEl.style.width = ((current + 1) / slides.length * 100) + '%';
-  triggerTransition(slide);
 }
 
 totalEl.textContent = slides.length;
