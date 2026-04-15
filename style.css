@@ -181,7 +181,27 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ── Navigation ── */
+/* ── Context Slide ── */
+.slide--context {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 40% 60%, #1a1510 0%, var(--dark) 70%);
+}
+
+.slide__title--sm {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+}
+
+.slide__body {
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  color: var(--light);
+  opacity: 0.75;
+  line-height: 1.9;
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+ */
 .nav {
   display: flex;
   align-items: center;
