@@ -131,7 +131,7 @@ body {
 .slide__passion-svg {
   width: clamp(3rem, 7vw, 6rem);
   opacity: 0.15;
-  filter: brightness(0) saturate(100%) invert(68%) sepia(55%) saturate(450%) hue-rotate(5deg) brightness(88%);
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(600%) hue-rotate(5deg) brightness(90%);
   animation: trinity-glow 4s ease-in-out infinite;
 }
 
