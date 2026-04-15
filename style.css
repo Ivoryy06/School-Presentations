@@ -411,6 +411,126 @@ body {
   margin-top: 0.5rem !important;
 }
 
+/* ── Tokoh Overview ── */
+.slide--tokoh-overview {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #111018 0%, var(--dark) 70%);
+}
+
+.tokoh-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.tokoh-chip {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  border: 1px solid;
+  letter-spacing: 0.04em;
+}
+
+.tokoh-chip--yesus   { color: #c9a84c; border-color: #c9a84c33; background: rgba(201,168,76,0.07); }
+.tokoh-chip--maria   { color: #7aaed6; border-color: #7aaed633; background: rgba(122,174,214,0.07); }
+.tokoh-chip--pilatus { color: #8aab8a; border-color: #8aab8a33; background: rgba(138,171,138,0.07); }
+.tokoh-chip--petrus  { color: #c87941; border-color: #c8794133; background: rgba(200,121,65,0.07); }
+.tokoh-chip--raja    { color: #b85555; border-color: #b8555533; background: rgba(184,85,85,0.07); }
+
+/* ── Character Slides ── */
+.slide--character {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.character__img-side {
+  width: 38%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.character__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.9;
+}
+
+.character__text-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 3rem 3rem 2.5rem;
+  overflow-y: auto;
+}
+
+.character__name {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.character__role {
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.character__desc {
+  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+  color: var(--light);
+  opacity: 0.75;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.character__verse {
+  font-style: italic;
+  font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+  line-height: 1.7;
+  border-left: 2px solid;
+  padding-left: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Per-character colors */
+.slide--yesus  { background: radial-gradient(ellipse at 60% 50%, #1c1608 0%, var(--dark) 65%); }
+.slide--yesus  .character__name,
+.slide--yesus  .character__verse { color: #c9a84c; }
+.slide--yesus  .character__role  { color: #c9a84c; }
+.slide--yesus  .character__verse { border-color: #c9a84c55; }
+
+.slide--maria  { background: radial-gradient(ellipse at 60% 50%, #080e1a 0%, var(--dark) 65%); }
+.slide--maria  .character__name,
+.slide--maria  .character__verse { color: #7aaed6; }
+.slide--maria  .character__role  { color: #7aaed6; }
+.slide--maria  .character__verse { border-color: #7aaed655; }
+
+.slide--pilatus { background: radial-gradient(ellipse at 60% 50%, #0a100a 0%, var(--dark) 65%); }
+.slide--pilatus .character__name,
+.slide--pilatus .character__verse { color: #8aab8a; }
+.slide--pilatus .character__role  { color: #8aab8a; }
+.slide--pilatus .character__verse { border-color: #8aab8a55; }
+
+.slide--petrus  { background: radial-gradient(ellipse at 60% 50%, #1a0e06 0%, var(--dark) 65%); }
+.slide--petrus  .character__name,
+.slide--petrus  .character__verse { color: #c87941; }
+.slide--petrus  .character__role  { color: #c87941; }
+.slide--petrus  .character__verse { border-color: #c8794155; }
+
+.slide--kayafas { background: radial-gradient(ellipse at 60% 50%, #180808 0%, var(--dark) 65%); }
+.slide--kayafas .character__name,
+.slide--kayafas .character__verse { color: #b85555; }
+.slide--kayafas .character__role  { color: #b85555; }
+.slide--kayafas .character__verse { border-color: #b8555555; }
+
 /* ── Fullscreen scaling ── */
 :fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
 :fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }
