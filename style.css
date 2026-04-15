@@ -157,7 +157,7 @@ body {
 }
 
 .slide__cross rect {
-  fill: var(--gold);
+  fill: var(--gold-dim);
 }
 
 .slide__greek-svg {
@@ -167,7 +167,7 @@ body {
 }
 
 .slide__greek-svg text {
-  fill: var(--gold);
+  fill: var(--gold-dim);
 }
 
 
