@@ -94,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5vw;
+  gap: 0;
   width: 100%;
   padding: 0 3%;
 }
@@ -111,6 +111,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5vw;
+}
+
+.slide__trinity-alpha,
+.slide__trinity-omega {
+  position: relative;
+  z-index: 1;
 }
 
 .slide__trinity-symbol,
