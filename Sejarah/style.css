@@ -169,6 +169,34 @@ body {
   letter-spacing: 0.1em; min-width: 50px; text-align: center;
 }
 
+/* ── Mobile Nav ── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(74, 158, 138, 0.2);
+  border: 1px solid var(--teal-dim);
+  color: var(--teal);
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, opacity 0.2s;
+}
+.mobile-nav:active { background: var(--teal-dim); }
+.mobile-nav:disabled { opacity: 0.25; cursor: default; }
+.mobile-nav--left { left: 1rem; }
+.mobile-nav--right { right: 1rem; }
+
+@media (max-width: 768px) {
+  .mobile-nav { display: block; }
+  .nav { display: none; }
+}
+
 /* ── Progress Bar ── */
 .progress-bar { height: 2px; background: #0f2018; }
 .progress-bar__fill {

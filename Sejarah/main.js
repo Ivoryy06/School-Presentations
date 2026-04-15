@@ -87,6 +87,18 @@ function triggerTransition(slide) {
   }
 }
 
+const mobilePrev = document.getElementById('mobilePrev');
+const mobileNext = document.getElementById('mobileNext');
+
+function updateButtons() {
+  const isFirst = current === 0;
+  const isLast = current === slides.length - 1;
+  prevBtn.disabled = isFirst;
+  nextBtn.disabled = isLast;
+  mobilePrev.disabled = isFirst;
+  mobileNext.disabled = isLast;
+}
+
 function goTo(index) {
   slides[current].classList.remove('active');
   current = index;
@@ -111,14 +123,15 @@ function goTo(index) {
   }
 
   currentEl.textContent = current + 1;
-  prevBtn.disabled = current === 0;
-  nextBtn.disabled = current === slides.length - 1;
+  updateButtons();
   progressEl.style.width = ((current + 1) / slides.length * 100) + '%';
 }
 
 totalEl.textContent = slides.length;
 prevBtn.addEventListener('click', () => current > 0 && goTo(current - 1));
 nextBtn.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
+mobilePrev.addEventListener('click', () => current > 0 && goTo(current - 1));
+mobileNext.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
 
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextBtn.click();
