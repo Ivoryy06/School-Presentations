@@ -262,78 +262,41 @@ body {
 
 .timeline {
   list-style: none;
-  position: relative;
-  padding-left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--gold-dim), transparent);
-}
+.timeline::before { display: none; }
 
 .timeline__item {
   display: flex;
-  gap: 1.25rem;
-  margin-bottom: 1.4rem;
-  position: relative;
+  flex-direction: column;
+  gap: 0.5rem;
   cursor: pointer;
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s;
 }
+.timeline__item:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
 
-.timeline__item:hover .timeline__heading,
-.timeline__item.active .timeline__heading { color: #e8c96a; }
+.timeline__dot { display: none; }
 
 .timeline__body { flex: 1; }
 
-.timeline__expand {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  opacity: 0;
-}
+.timeline__expand { display: none; }
 
 .timeline__img {
   width: 100%;
-  height: auto;
+  height: 110px;
+  object-fit: cover;
   border-radius: 4px;
-  margin-bottom: 0.6rem;
-  opacity: 0.85;
   border: 1px solid var(--gold-dim);
-}
-
-.timeline__expand p {
-  color: var(--light);
-  opacity: 0.75;
-  line-height: 1.85;
-  margin-top: 0.6rem;
-  border-left: 2px solid var(--gold-dim);
-  padding-left: 0.75rem;
-}
-
-.timeline__item.active .timeline__expand {
-  max-height: 1000px;
-  opacity: 1;
-}
-
-.timeline__item.active .timeline__dot {
-  background: #e8c96a;
-  box-shadow: 0 0 12px rgba(201,168,76,0.8);
-}
-
-.timeline__dot {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: 5px;
-  box-shadow: 0 0 6px rgba(201,168,76,0.5);
-  position: relative;
-  z-index: 1;
+  opacity: 0.85;
+  margin-top: 0.5rem;
 }
 
 .timeline__heading {
