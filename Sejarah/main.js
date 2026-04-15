@@ -132,7 +132,7 @@ function goTo(index) {
 function goToDetail(detailId) {
   returnSlide = current;
   const detailSlide = document.getElementById(detailId);
-  allSlides[current].classList.remove('active');
+  slides[current].classList.remove('active');
   detailSlide.classList.add('active');
   triggerTransition(detailSlide);
 }
