@@ -10,16 +10,31 @@ document.querySelectorAll('.suffer-card').forEach(card => {
   });
 });
 
-// ── Timeline accordion ──
+// ── Timeline detail overlay ──
+const detailOverlay = document.getElementById('detailOverlay');
+const detailBack    = document.getElementById('detailBack');
+const detailImg     = document.getElementById('detailImg');
+const detailTitle   = document.getElementById('detailTitle');
+const detailText    = document.getElementById('detailText');
+
 document.querySelectorAll('.timeline__item').forEach(item => {
   item.addEventListener('click', () => {
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.timeline__item').forEach(i => i.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
+    detailTitle.textContent = item.querySelector('.timeline__heading').textContent;
+    detailText.textContent  = item.querySelector('.timeline__expand p').textContent;
+    const img = item.querySelector('.timeline__img');
+    detailImg.src = img ? img.src : '';
+    detailImg.alt = img ? img.alt : '';
+    detailImg.style.display = img ? '' : 'none';
+    detailOverlay.classList.add('active');
   });
   item.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
   });
+});
+
+detailBack.addEventListener('click', () => detailOverlay.classList.remove('active'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') detailOverlay.classList.remove('active');
 });
 
 
