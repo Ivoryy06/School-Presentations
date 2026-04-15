@@ -136,7 +136,7 @@ body {
 }
 
 .slide__passion-svg[alt="Crown of Thorns"] {
-  width: clamp(7rem, 14vw, 13rem);
+  width: clamp(5rem, 10vw, 9rem);
   opacity: 0.9;
 }
 
