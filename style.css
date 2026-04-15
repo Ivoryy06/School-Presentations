@@ -531,6 +531,45 @@ body {
 .slide--kayafas .character__role  { color: #b85555; }
 .slide--kayafas .character__verse { border-color: #b8555555; }
 
+/* ── Deskripsi Slide ── */
+.slide--deskripsi {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 40% 50%, #100d0a 0%, var(--dark) 70%);
+  overflow-y: auto;
+}
+
+.desc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.desc-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: clamp(0.8rem, 1.6vw, 0.92rem);
+  color: var(--light);
+  opacity: 0.8;
+  line-height: 1.7;
+}
+
+.desc-list__num {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+  min-width: 22px;
+}
+
+.desc-list strong {
+  color: var(--gold);
+  font-weight: normal;
+}
+
 /* ── Fullscreen scaling ── */
 :fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
 :fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }
