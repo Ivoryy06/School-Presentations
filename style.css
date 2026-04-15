@@ -255,64 +255,81 @@ body {
 }
 
 .slide__content--wide {
-  max-width: 860px;
+  max-width: 98%;
   width: 100%;
   padding: 2rem 2.5rem;
 }
 
 .timeline {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
   padding: 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
-.timeline::before { display: none; }
+/* horizontal line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  transform: translateY(-50%);
+}
 
 .timeline__item {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
   cursor: pointer;
-  border: 1px solid var(--gold-dim);
-  border-radius: 6px;
-  padding: 0.75rem;
-  background: rgba(255,255,255,0.02);
-  transition: border-color 0.2s, background 0.2s;
+  position: relative;
 }
-.timeline__item:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
 
-.timeline__dot { display: none; }
+/* odd items: label above line, dot on line */
+.timeline__item:nth-child(odd) { flex-direction: column; padding-bottom: calc(50% + 1rem); }
+.timeline__item:nth-child(even) { flex-direction: column-reverse; padding-top: calc(50% + 1rem); }
 
-.timeline__body { flex: 1; }
+.timeline__item:nth-child(odd) .timeline__body   { order: 1; margin-bottom: 0.5rem; }
+.timeline__item:nth-child(odd) .timeline__dot    { order: 2; }
+.timeline__item:nth-child(even) .timeline__body  { order: 1; margin-top: 0.5rem; }
+.timeline__item:nth-child(even) .timeline__dot   { order: 2; }
+
+.timeline__item:hover .timeline__heading { color: #e8c96a; }
+
+.timeline__body { text-align: center; padding: 0 0.25rem; }
 
 .timeline__expand { display: none; }
 
-.timeline__img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--gold-dim);
-  opacity: 0.85;
-  margin-top: 0.5rem;
+.timeline__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+  z-index: 1;
+}
+.timeline__item:hover .timeline__dot {
+  background: #e8c96a;
+  box-shadow: 0 0 12px rgba(201,168,76,0.8);
 }
 
 .timeline__heading {
-  font-size: clamp(0.85rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.7rem, 1.2vw, 0.95rem);
   font-weight: normal;
   color: var(--gold);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   letter-spacing: 0.03em;
 }
 
-.timeline__desc {
-  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
-  color: var(--light);
-  opacity: 0.65;
-  line-height: 1.75;
-}
+.timeline__desc { display: none; }
 
 /* ── Suffering Slide ── */
 .slide--suffering {
@@ -611,6 +628,14 @@ body {
   max-width: 760px;
   width: 100%;
   text-align: center;
+}
+
+.detail-overlay__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.5rem;
 }
 
 .detail-overlay__img {
