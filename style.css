@@ -601,8 +601,13 @@ body {
 :fullscreen .slide__label        { font-size: 1.1rem; }
 :fullscreen .suffer-card__title  { font-size: clamp(1rem, 1.8vw, 1.5rem); }
 :fullscreen .suffer-card__expand p { font-size: clamp(0.9rem, 1.5vw, 1.3rem); }
-:fullscreen .slide__content      { max-width: 90vw; padding: 1.25rem 2rem; }
-:fullscreen .slide__content--wide { max-width: 92vw; }
+:fullscreen .slide__content      { max-width: 96vw; padding: 1rem 1.5rem; }
+:fullscreen .slide__content--wide { max-width: 98vw; }
+:fullscreen .slide__title        { margin-bottom: 0.5rem; }
+:fullscreen .slide__title--sm    { margin-bottom: 0.5rem; }
+:fullscreen .slide__subtitle     { margin-bottom: 1rem; }
+:fullscreen .slide__body         { margin-bottom: 0.75rem; }
+:fullscreen .slide__divider      { margin: 0 auto 1rem; }
 
 /* ── Mobile: allow scrolling on small screens ── */
 @media (max-width: 768px) and (pointer: coarse) {
