@@ -135,6 +135,11 @@ body {
   animation: trinity-glow 4s ease-in-out infinite;
 }
 
+.slide__passion-svg[alt="Crown of Thorns"] {
+  width: clamp(7rem, 14vw, 13rem);
+  opacity: 0.9;
+}
+
 .slide__passion-svg polygon {
   fill: var(--gold);
   stroke: none;
