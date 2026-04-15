@@ -89,6 +89,7 @@ function triggerTransition(slide) {
 
 const mobilePrev = document.getElementById('mobilePrev');
 const mobileNext = document.getElementById('mobileNext');
+let returnSlide = null;
 
 function updateButtons() {
   const isFirst = current === 0;
@@ -127,11 +128,35 @@ function goTo(index) {
   progressEl.style.width = ((current + 1) / slides.length * 100) + '%';
 }
 
+function goToDetail(detailId) {
+  returnSlide = current;
+  const detailSlide = document.getElementById(detailId);
+  const detailIndex = Array.from(slides).indexOf(detailSlide);
+  if (detailIndex !== -1) goTo(detailIndex);
+}
+
+function backToMain() {
+  if (returnSlide !== null) {
+    goTo(returnSlide);
+    returnSlide = null;
+  }
+}
+
 totalEl.textContent = slides.length;
 prevBtn.addEventListener('click', () => current > 0 && goTo(current - 1));
 nextBtn.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
 mobilePrev.addEventListener('click', () => current > 0 && goTo(current - 1));
 mobileNext.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
+
+document.querySelectorAll('.fun-fact').forEach(box => {
+  box.addEventListener('click', () => goToDetail(box.dataset.detail));
+  box.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      goToDetail(box.dataset.detail);
+    }
+  });
+});
 
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextBtn.click();
