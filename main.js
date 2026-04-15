@@ -1,4 +1,16 @@
-// ── Particles ──
+// ── Timeline accordion ──
+document.querySelectorAll('.timeline__item').forEach(item => {
+  item.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.timeline__item').forEach(i => i.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+  item.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
+  });
+});
+
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];

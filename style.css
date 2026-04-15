@@ -245,3 +245,117 @@ body {
   transition: width 0.3s ease;
   width: 100%;
 }
+
+/* ── Timeline Slide ── */
+.slide--timeline {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #161210 0%, var(--dark) 70%);
+  overflow-y: auto;
+}
+
+.slide__content--wide {
+  max-width: 860px;
+  width: 100%;
+  padding: 2rem 2.5rem;
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+
+.timeline__item {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.timeline__item:hover .timeline__heading,
+.timeline__item.active .timeline__heading { color: #e8c96a; }
+
+.timeline__body { flex: 1; }
+
+.timeline__expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.timeline__img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+  border: 1px solid var(--gold-dim);
+}
+
+.timeline__expand p {
+  color: var(--light);
+  opacity: 0.75;
+  line-height: 1.85;
+  margin-top: 0.6rem;
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 0.75rem;
+}
+
+.timeline__item.active .timeline__expand {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.timeline__item.active .timeline__dot {
+  background: #e8c96a;
+  box-shadow: 0 0 12px rgba(201,168,76,0.8);
+}
+
+.timeline__dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 5px;
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline__heading {
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  font-weight: normal;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.03em;
+}
+
+.timeline__desc {
+  font-size: clamp(0.75rem, 1.5vw, 0.88rem);
+  color: var(--light);
+  opacity: 0.65;
+  line-height: 1.75;
+}
+
+/* ── Fullscreen scaling ── */
+:fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
+:fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+:fullscreen .slide__subtitle     { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+:fullscreen .slide__body         { font-size: clamp(1rem, 2.2vw, 1.3rem); }
+:fullscreen .slide__verse        { font-size: clamp(1rem, 2vw, 1.2rem); }
+:fullscreen .slide__label        { font-size: 0.9rem; }
