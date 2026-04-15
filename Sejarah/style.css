@@ -490,3 +490,37 @@ body {
   body { overflow: auto; height: auto; min-height: 100vh; }
   .slide { overflow-y: auto; }
 }
+
+
+/* ── Fun Facts ── */
+.fun-fact {
+  background: rgba(74, 158, 138, 0.08);
+  border: 1px solid var(--teal-dim);
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.fun-fact:hover, .fun-fact:focus {
+  background: rgba(74, 158, 138, 0.15);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  outline: none;
+}
+.fun-fact__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.fun-fact__title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+}
+.fun-fact__text {
+  font-size: 0.7rem;
+  color: var(--light);
+  line-height: 1.3;
+  opacity: 0.85;
+}
