@@ -360,7 +360,18 @@ body {
 .slide--ali         .character__role { color: #8aab8a; }
 .slide--ali         .character__verse { border-color: #8aab8a55; }
 
-/* ── Profil Table ── */
+/* ── Castle silhouette ── */
+.castle-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+
 .profil-table {
   width: 100%;
   border-collapse: collapse;
