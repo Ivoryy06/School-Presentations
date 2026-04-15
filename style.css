@@ -88,23 +88,56 @@ body {
   50%       { opacity: 0.16; filter: blur(22px); }
 }
 
-/* Cross silhouette */
-.slide__cross {
+/* Trinity layout */
+.slide__trinity {
   position: absolute;
-  right: 12%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(120px, 18vw, 220px);
-  opacity: 0.07;
-  fill: var(--gold);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
   pointer-events: none;
-  filter: drop-shadow(0 0 0px rgba(201,168,76,0));
-  animation: cross-glow 4s ease-in-out infinite;
 }
 
-@keyframes cross-glow {
-  0%, 100% { opacity: 0.07; filter: drop-shadow(0 0 4px rgba(201,168,76,0.1)); }
-  50%       { opacity: 0.13; filter: drop-shadow(0 0 14px rgba(201,168,76,0.35)); }
+.slide__trinity-symbol,
+.slide__trinity-cross {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.slide__greek-svg {
+  width: clamp(5rem, 12vw, 9rem);
+  opacity: 0.15;
+  animation: trinity-glow 4s ease-in-out infinite;
+}
+
+.slide__greek-svg text {
+  fill: var(--gold);
+}
+
+.slide__trinity-cross svg {
+  width: clamp(80px, 12vw, 150px);
+  opacity: 0.15;
+  animation: trinity-glow 4s ease-in-out infinite;
+}
+
+.slide__trinity-cross svg rect {
+  fill: var(--gold);
+}
+
+.slide__trinity-label {
+  font-size: clamp(0.55rem, 1vw, 0.8rem);
+  color: var(--gold);
+  opacity: 0.35;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@keyframes trinity-glow {
+  0%, 100% { opacity: 0.12; filter: drop-shadow(0 0 4px rgba(201,168,76,0.15)); }
+  50%       { opacity: 0.22; filter: drop-shadow(0 0 16px rgba(201,168,76,0.4)); }
 }
 
 /* Particles canvas */
@@ -315,9 +348,11 @@ body {
   width: 100%;
   padding: 0 0.3rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
-.timeline__item:nth-child(odd) .timeline__body  { bottom: 50%; padding-bottom: 0.6rem; }
-.timeline__item:nth-child(even) .timeline__body { top: 50%;    padding-top: 0.6rem; }
+.timeline__item:nth-child(odd) .timeline__body  { bottom: 50%; padding-bottom: 0.6rem; justify-content: flex-end; }
+.timeline__item:nth-child(even) .timeline__body { top: 50%;    padding-top: 0.6rem; justify-content: flex-start; }
 
 .timeline__item:hover .timeline__heading { color: #e8c96a; }
 
