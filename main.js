@@ -73,6 +73,33 @@ const slides = document.querySelectorAll('.slide');
 
 let current = 0;
 
+function triggerTransition(slide) {
+  const t = slide.dataset.transition;
+  if (!t) return;
+
+  // clear previous anim classes
+  slide.classList.remove('anim-fade-rise','anim-slide-left','anim-scale-up','anim-split');
+  slide.querySelectorAll('.stagger-item').forEach(el => {
+    el.classList.remove('anim-rise');
+    el.style.animationDelay = '';
+  });
+
+  void slide.offsetWidth; // reflow
+
+  if (t === 'fade-rise')   slide.classList.add('anim-fade-rise');
+  if (t === 'slide-left')  slide.classList.add('anim-slide-left');
+  if (t === 'scale-up')    slide.classList.add('anim-scale-up');
+  if (t === 'split')       slide.classList.add('anim-split');
+
+  if (t === 'stagger-left' || t === 'stagger-up' || t === 'pop-stagger') {
+    const items = slide.querySelectorAll('.stagger-item');
+    items.forEach((el, i) => {
+      el.style.animationDelay = `${i * 80}ms`;
+      setTimeout(() => el.classList.add('anim-rise'), i * 80);
+    });
+  }
+}
+
 function goTo(index) {
   slides[current].classList.remove('active');
   current = index;
@@ -81,6 +108,7 @@ function goTo(index) {
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === slides.length - 1;
   progressEl.style.width = ((current + 1) / slides.length * 100) + '%';
+  triggerTransition(slides[current]);
 }
 
 totalEl.textContent = slides.length;

@@ -570,6 +570,28 @@ body {
   font-weight: normal;
 }
 
+/* ── Slide Transitions ── */
+@keyframes t-fade-rise   { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes t-slide-left  { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
+@keyframes t-slide-right { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+@keyframes t-scale-up    { from { opacity:0; transform:scale(0.93); } to { opacity:1; transform:scale(1); } }
+@keyframes t-rise        { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+@keyframes t-pop         { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+
+.anim-fade-rise  { animation: t-fade-rise  0.5s ease forwards; }
+.anim-slide-left { animation: t-slide-left 0.45s ease forwards; }
+.anim-scale-up   { animation: t-scale-up   0.45s ease forwards; }
+.anim-rise       { animation: t-rise       0.4s ease forwards; }
+.anim-pop        { animation: t-pop        0.35s ease forwards; }
+
+/* split: img from left, text from right */
+.slide--character.anim-split .character__img-side { animation: t-slide-right 0.5s ease forwards; }
+.slide--character.anim-split .character__text-side { animation: t-slide-left 0.5s ease forwards; }
+
+/* stagger helpers — set via JS inline delay */
+.stagger-item { opacity: 0; }
+.stagger-item.anim-rise { opacity: 1; }
+
 /* ── Fullscreen scaling ── */
 :fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 5rem); }
 :fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 3.2rem); }

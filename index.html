@@ -9,7 +9,7 @@
 <body>
 
   <!-- SLIDE 1: Title / Introduction -->
-  <section class="slide slide--title active" id="slide-1">
+  <section class="slide slide--title active" id="slide-1" data-transition="fade-rise">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <canvas class="slide__particles" id="particles"></canvas>
@@ -28,7 +28,7 @@
   </section>
 
   <!-- SLIDE 2: Context / Tuduhan -->
-  <section class="slide slide--context" id="slide-2">
+  <section class="slide slide--context" id="slide-2" data-transition="slide-left">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <div class="slide__content slide__content--fadein">
@@ -54,7 +54,7 @@
 
 
   <!-- SLIDE 3: Timeline -->
-  <section class="slide slide--timeline" id="slide-3">
+  <section class="slide slide--timeline" id="slide-3" data-transition="stagger-left">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <div class="slide__content slide__content--fadein slide__content--wide">
@@ -62,7 +62,7 @@
       <h2 class="slide__title slide__title--sm">Perjalanan Menuju Salib</h2>
       <div class="slide__divider"></div>
       <ol class="timeline">
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Awal Pelayanan Umum</h3>
@@ -73,7 +73,7 @@
             </div>
           </div>
         </li>
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Perjamuan Terakhir</h3>
@@ -84,7 +84,7 @@
             </div>
           </div>
         </li>
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Doa di Taman Getsemani</h3>
@@ -95,7 +95,7 @@
             </div>
           </div>
         </li>
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Penangkapan Yesus</h3>
@@ -106,7 +106,7 @@
             </div>
           </div>
         </li>
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Sidang di Hadapan Imam Besar</h3>
@@ -117,7 +117,7 @@
             </div>
           </div>
         </li>
-        <li class="timeline__item" tabindex="0">
+        <li class="timeline__item stagger-item" tabindex="0">
           <span class="timeline__dot timeline__dot--last"></span>
           <div class="timeline__body">
             <h3 class="timeline__heading">Sidang di Hadapan Pontius Pilatus</h3>
@@ -133,7 +133,7 @@
   </section>
 
   <!-- SLIDE 4: Tema - Penderitaan Sebelum Disalibkan -->
-  <section class="slide slide--suffering" id="slide-4">
+  <section class="slide slide--suffering" id="slide-4" data-transition="scale-up">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <div class="slide__content slide__content--fadein slide__content--wide">
@@ -145,7 +145,7 @@
       </p>
       <div class="suffer-grid">
 
-        <div class="suffer-card" tabindex="0">
+        <div class="suffer-card stagger-item" tabindex="0">
           <h3 class="suffer-card__title">Barabas Dibebaskan, Yesus Diserahkan</h3>
           <div class="suffer-card__expand">
             <p>Pilatus menawarkan kepada massa untuk membebaskan satu tahanan sesuai kebiasaan Paskah. Ia mengira mereka akan memilih Yesus — namun para imam kepala menghasut massa untuk meminta Barabas, seorang pemberontak dan pembunuh. Pilatus pun membebaskan Barabas dan menyerahkan Yesus untuk disesah dan disalibkan.</p>
@@ -153,7 +153,7 @@
           </div>
         </div>
 
-        <div class="suffer-card" tabindex="0">
+        <div class="suffer-card stagger-item" tabindex="0">
           <h3 class="suffer-card__title">Dimahkotai Duri</h3>
           <div class="suffer-card__expand">
             <p>Para prajurit menganyam mahkota dari duri dan menekannya ke kepala Yesus, lalu mengenakan jubah ungu dan mengejek-Nya sebagai "Raja orang Yahudi." Ini bukan sekadar siksaan fisik — ini adalah penghinaan terhadap martabat-Nya sebagai Raja segala raja.</p>
@@ -161,7 +161,7 @@
           </div>
         </div>
 
-        <div class="suffer-card" tabindex="0">
+        <div class="suffer-card stagger-item" tabindex="0">
           <h3 class="suffer-card__title">Memikul Salib ke Golgota</h3>
           <div class="suffer-card__expand">
             <p>Dalam kondisi tubuh yang sudah sangat lemah akibat cambukan, Yesus dipaksa memikul salib-Nya sendiri menuju bukit Golgota — tempat eksekusi di luar tembok kota. Di tengah jalan, Simon dari Kirene dipaksa membantu memikul salib itu karena Yesus tidak lagi mampu.</p>
@@ -169,7 +169,7 @@
           </div>
         </div>
 
-        <div class="suffer-card" tabindex="0">
+        <div class="suffer-card stagger-item" tabindex="0">
           <h3 class="suffer-card__title">Diolok dan Ditinggalkan</h3>
           <div class="suffer-card__expand">
             <p>Sepanjang perjalanan sengsara-Nya, Yesus diolok oleh para prajurit, imam kepala, dan bahkan orang-orang yang lewat. Para murid yang paling dekat pun telah melarikan diri. Petrus menyangkal-Nya tiga kali. Yesus menanggung kesepian dan penghinaan yang paling dalam — sendirian di tengah kerumunan yang membenci-Nya.</p>
@@ -182,7 +182,7 @@
   </section>
 
   <!-- SLIDE 5: Tokoh Overview -->
-  <section class="slide slide--tokoh-overview" id="slide-5">
+  <section class="slide slide--tokoh-overview" id="slide-5" data-transition="pop-stagger">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <div class="slide__content slide__content--fadein">
@@ -190,11 +190,11 @@
       <h2 class="slide__title slide__title--sm">Mereka yang Ada dalam Kisah Ini</h2>
       <div class="slide__divider"></div>
       <div class="tokoh-list">
-        <div class="tokoh-chip tokoh-chip--yesus">Yesus</div>
-        <div class="tokoh-chip tokoh-chip--maria">Bunda Maria</div>
-        <div class="tokoh-chip tokoh-chip--pilatus">Pontius Pilatus</div>
-        <div class="tokoh-chip tokoh-chip--petrus">Petrus</div>
-        <div class="tokoh-chip tokoh-chip--raja">Imam Besar Kayafas</div>
+        <div class="tokoh-chip stagger-item tokoh-chip--yesus">Yesus</div>
+        <div class="tokoh-chip stagger-item tokoh-chip--maria">Bunda Maria</div>
+        <div class="tokoh-chip stagger-item tokoh-chip--pilatus">Pontius Pilatus</div>
+        <div class="tokoh-chip stagger-item tokoh-chip--petrus">Petrus</div>
+        <div class="tokoh-chip stagger-item tokoh-chip--raja">Imam Besar Kayafas</div>
       </div>
       <p class="slide__body" style="text-align:center; margin-top:1.5rem;">
         Setiap tokoh memainkan peran yang tak tergantikan dalam kisah sengsara dan wafat Yesus — dari pengorbanan, kesedihan, pengkhianatan, penyangkalan, hingga penghakiman.
@@ -203,7 +203,7 @@
   </section>
 
   <!-- SLIDE 6: Yesus -->
-  <section class="slide slide--character slide--yesus" id="slide-6">
+  <section class="slide slide--character slide--yesus" id="slide-6" data-transition="split">
     <div class="character__img-side">
       <img src="img/yesus.jpg" alt="Yesus" class="character__img" />
     </div>
@@ -218,7 +218,7 @@
   </section>
 
   <!-- SLIDE 7: Bunda Maria -->
-  <section class="slide slide--character slide--maria" id="slide-7">
+  <section class="slide slide--character slide--maria" id="slide-7" data-transition="split">
     <div class="character__img-side">
       <img src="img/maria.jpg" alt="Bunda Maria" class="character__img" />
     </div>
@@ -233,7 +233,7 @@
   </section>
 
   <!-- SLIDE 8: Pontius Pilatus -->
-  <section class="slide slide--character slide--pilatus" id="slide-8">
+  <section class="slide slide--character slide--pilatus" id="slide-8" data-transition="split">
     <div class="character__img-side">
       <img src="img/pilatus.jpg" alt="Pontius Pilatus" class="character__img" />
     </div>
@@ -248,7 +248,7 @@
   </section>
 
   <!-- SLIDE 9: Petrus -->
-  <section class="slide slide--character slide--petrus" id="slide-9">
+  <section class="slide slide--character slide--petrus" id="slide-9" data-transition="split">
     <div class="character__img-side">
       <img src="img/petrus.jpg" alt="Petrus" class="character__img" />
     </div>
@@ -263,7 +263,7 @@
   </section>
 
   <!-- SLIDE 10: Imam Besar Kayafas -->
-  <section class="slide slide--character slide--kayafas" id="slide-10">
+  <section class="slide slide--character slide--kayafas" id="slide-10" data-transition="split">
     <div class="character__img-side">
       <img src="img/katafas.jpg" alt="Imam Besar Kayafas" class="character__img" />
     </div>
@@ -278,7 +278,7 @@
   </section>
 
   <!-- SLIDE 11: Deskripsi -->
-  <section class="slide slide--deskripsi" id="slide-11">
+  <section class="slide slide--deskripsi" id="slide-11" data-transition="stagger-up">
     <div class="slide__light-ray"></div>
     <div class="slide__light-ray slide__light-ray--left"></div>
     <div class="slide__content slide__content--fadein slide__content--wide">
@@ -286,13 +286,13 @@
       <h2 class="slide__title slide__title--sm">Apa yang Dialami Yesus</h2>
       <div class="slide__divider"></div>
       <ul class="desc-list">
-        <li><span class="desc-list__num">01</span><div><strong>Difitnah</strong> — Para imam kepala menghadirkan saksi-saksi palsu untuk menuduh Yesus menghujat Allah dan mengancam ketertiban umum.</div></li>
-        <li><span class="desc-list__num">02</span><div><strong>Dijual</strong> — Yudas Iskariot menyerahkan Yesus kepada para imam kepala seharga tiga puluh keping perak — harga seorang budak.</div></li>
-        <li><span class="desc-list__num">03</span><div><strong>Ditangkap</strong> — Di taman Getsemani, Yesus ditangkap oleh pasukan bersenjata di tengah malam, jauh dari keramaian.</div></li>
-        <li><span class="desc-list__num">04</span><div><strong>Diadili</strong> — Dua kali diadili: pertama oleh Sanhedrin yang menjatuhkan vonis mati, lalu oleh Pilatus yang menyerahkan-Nya pada tekanan massa.</div></li>
-        <li><span class="desc-list__num">05</span><div><strong>Disiksa</strong> — Dicambuk, dimahkotai duri, diolok, dan dipukuli oleh para prajurit Romawi sebelum dibawa ke Golgota.</div></li>
-        <li><span class="desc-list__num">06</span><div><strong>Dipaksa memikul salib</strong> — Dalam kondisi tubuh yang hancur, Yesus dipaksa memikul salib-Nya sendiri menuju tempat eksekusi.</div></li>
-        <li><span class="desc-list__num">07</span><div><strong>Disalibkan</strong> — Tangan dan kaki-Nya dipaku ke kayu salib. Ia digantung di antara dua penjahat, di hadapan publik, sebagai hukuman paling hina.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">01</span><div><strong>Difitnah</strong> — Para imam kepala menghadirkan saksi-saksi palsu untuk menuduh Yesus menghujat Allah dan mengancam ketertiban umum.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">02</span><div><strong>Dijual</strong> — Yudas Iskariot menyerahkan Yesus kepada para imam kepala seharga tiga puluh keping perak — harga seorang budak.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">03</span><div><strong>Ditangkap</strong> — Di taman Getsemani, Yesus ditangkap oleh pasukan bersenjata di tengah malam, jauh dari keramaian.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">04</span><div><strong>Diadili</strong> — Dua kali diadili: pertama oleh Sanhedrin yang menjatuhkan vonis mati, lalu oleh Pilatus yang menyerahkan-Nya pada tekanan massa.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">05</span><div><strong>Disiksa</strong> — Dicambuk, dimahkotai duri, diolok, dan dipukuli oleh para prajurit Romawi sebelum dibawa ke Golgota.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">06</span><div><strong>Dipaksa memikul salib</strong> — Dalam kondisi tubuh yang hancur, Yesus dipaksa memikul salib-Nya sendiri menuju tempat eksekusi.</div></li>
+        <li class="stagger-item"><span class="desc-list__num">07</span><div><strong>Disalibkan</strong> — Tangan dan kaki-Nya dipaku ke kayu salib. Ia digantung di antara dua penjahat, di hadapan publik, sebagai hukuman paling hina.</div></li>
       </ul>
     </div>
   </section>
