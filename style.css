@@ -94,7 +94,8 @@ body {
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3vw;
   padding: 0 2%;
   pointer-events: none;
 }
@@ -118,7 +119,7 @@ body {
 }
 
 .slide__trinity-cross svg {
-  width: clamp(80px, 12vw, 150px);
+  width: clamp(120px, 18vw, 220px);
   opacity: 0.15;
   animation: trinity-glow 4s ease-in-out infinite;
 }
