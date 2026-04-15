@@ -293,8 +293,8 @@ body {
 }
 
 /* odd items: label above line, dot on line */
-.timeline__item:nth-child(odd) { flex-direction: column; padding-bottom: calc(50% + 1rem); }
-.timeline__item:nth-child(even) { flex-direction: column-reverse; padding-top: calc(50% + 1rem); }
+.timeline__item:nth-child(odd) { flex-direction: column; padding-bottom: calc(50% + 0.3rem); }
+.timeline__item:nth-child(even) { flex-direction: column-reverse; padding-top: calc(50% + 0.3rem); }
 
 .timeline__item:nth-child(odd) .timeline__body   { order: 1; margin-bottom: 0.25rem; }
 .timeline__item:nth-child(odd) .timeline__dot    { order: 2; }
@@ -329,13 +329,15 @@ body {
   letter-spacing: 0.03em;
 }
 
-.timeline__year {
-  font-size: clamp(0.6rem, 1vw, 0.75rem);
-  color: var(--muted);
-  letter-spacing: 0.05em;
-}
+.timeline__year { display: none; }
 
-.timeline__desc { display: none; }
+.timeline__desc {
+  font-size: clamp(0.6rem, 1vw, 0.78rem);
+  color: var(--light);
+  opacity: 0.55;
+  line-height: 1.4;
+  text-align: center;
+}
 
 /* ── Suffering Slide ── */
 .slide--suffering {
