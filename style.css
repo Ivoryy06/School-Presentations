@@ -298,8 +298,7 @@ body {
 
 .timeline__img {
   width: 100%;
-  max-height: 160px;
-  object-fit: cover;
+  height: auto;
   border-radius: 4px;
   margin-bottom: 0.6rem;
   opacity: 0.85;
