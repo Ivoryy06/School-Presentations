@@ -183,6 +183,20 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevBtn.click();
 });
 
+// ── Confetti ──
+function confetti() {
+  const colors = ['#4ac68a','#f5c842','#e05c5c','#5b9cf6','#c084fc'];
+  for (let i = 0; i < 80; i++) {
+    const el = document.createElement('div');
+    el.style.cssText = `position:fixed;top:0;left:${Math.random()*100}vw;width:8px;height:8px;
+      background:${colors[i%colors.length]};border-radius:${Math.random()>0.5?'50%':'2px'};
+      pointer-events:none;z-index:9999;animation:confetti-fall ${0.8+Math.random()*1}s ease forwards`;
+    el.style.setProperty('--dx', (Math.random()-0.5)*200+'px');
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 2000);
+  }
+}
+
 // ── Quiz ──
 document.querySelectorAll('.slide--quiz:not(.slide--decision)').forEach(slide => {
   slide.querySelectorAll('.quiz__opt').forEach(btn => {
@@ -194,6 +208,7 @@ document.querySelectorAll('.slide--quiz:not(.slide--decision)').forEach(slide =>
         if (b.dataset.correct === 'true') b.classList.add('quiz__opt--correct');
       });
       if (!correct) btn.classList.add('quiz__opt--wrong');
+      else confetti();
       slide.querySelector('.quiz__explanation').hidden = false;
     });
   });
