@@ -714,6 +714,16 @@ body {
 
 /* ── Quiz slide ── */
 .quiz { max-width: 700px; margin: auto; width: 100%; }
+.quiz__quote {
+  font-style: italic;
+  border-left: 3px solid var(--accent,#4a9e8a);
+  padding: 0.5rem 1rem;
+  margin: 0 auto 1rem;
+  color: var(--text-muted,#ccc);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
+  text-align: left;
+}
 .quiz__q {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   font-weight: 600;
