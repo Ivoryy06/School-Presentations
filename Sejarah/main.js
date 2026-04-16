@@ -61,11 +61,16 @@ const slides     = Array.from(allSlides).filter(s => !s.classList.contains('slid
 
 let current = 0;
 
-function triggerTransition(slide) {
-  const t = slide.dataset.transition;
+function triggerTransition(slide, index) {
+  let t = slide.dataset.transition;
   if (!t) return;
 
-  slide.classList.remove('anim-fade-rise','anim-slide-left','anim-scale-up','anim-split');
+  // zig-zag: even index slides enter from right, odd from left
+  if (t === 'fade-rise' || t === 'slide-left') {
+    t = (index % 2 === 0) ? 'slide-left' : 'slide-right-custom';
+  }
+
+  slide.classList.remove('anim-fade-rise','anim-slide-left','anim-slide-right','anim-scale-up','anim-split');
   slide.querySelectorAll('.stagger-item').forEach(el => {
     el.classList.remove('anim-rise');
     el.style.animationDelay = '';
@@ -73,10 +78,10 @@ function triggerTransition(slide) {
 
   void slide.offsetWidth;
 
-  if (t === 'fade-rise')  slide.classList.add('anim-fade-rise');
-  if (t === 'slide-left') slide.classList.add('anim-slide-left');
-  if (t === 'scale-up')   slide.classList.add('anim-scale-up');
-  if (t === 'split')      slide.classList.add('anim-split');
+  if (t === 'slide-left')        slide.classList.add('anim-slide-left');
+  if (t === 'slide-right-custom') slide.classList.add('anim-slide-right');
+  if (t === 'scale-up')             slide.classList.add('anim-scale-up');
+  if (t === 'split')                slide.classList.add('anim-split');
 
   if (t === 'flag-question') {
     const img = slide.querySelector('.flag-q__img');
@@ -126,11 +131,11 @@ function goTo(index) {
     slide.classList.add('active');
     requestAnimationFrame(() => {
       slide.style.opacity = '';
-      triggerTransition(slide);
+      triggerTransition(slide, current);
     });
   } else {
     slide.classList.add('active');
-    triggerTransition(slide);
+    triggerTransition(slide, current);
   }
 
   currentEl.textContent = current + 1;
