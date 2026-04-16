@@ -141,6 +141,7 @@ function goTo(index) {
   currentEl.textContent = current + 1;
   updateButtons();
   progressEl.style.width = ((current + 1) / slides.length * 100) + '%';
+  if (slide.classList.contains('slide--quiz')) resetQuiz(slide);
 }
 
 function goToDetail(detailId) {
@@ -181,5 +182,26 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextBtn.click();
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevBtn.click();
 });
+
+// ── Quiz ──
+document.querySelectorAll('.slide--quiz').forEach(slide => {
+  slide.querySelectorAll('.quiz__opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (slide.querySelector('.quiz__opt.answered')) return;
+      const correct = btn.dataset.correct === 'true';
+      slide.querySelectorAll('.quiz__opt').forEach(b => {
+        b.classList.add('answered');
+        if (b.dataset.correct === 'true') b.classList.add('quiz__opt--correct');
+      });
+      if (!correct) btn.classList.add('quiz__opt--wrong');
+      slide.querySelector('.quiz__explanation').hidden = false;
+    });
+  });
+});
+
+function resetQuiz(slide) {
+  slide.querySelectorAll('.quiz__opt').forEach(b => b.className = 'quiz__opt');
+  slide.querySelector('.quiz__explanation').hidden = true;
+}
 
 goTo(0);
