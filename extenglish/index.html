@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinseria</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Slide 1: Title + Flag -->
+  <div class="slide active" id="slide-1">
+    <div class="s1-content">
+      <div class="flag-placeholder">
+        <div class="flag-top"></div>
+        <div class="flag-mid"><span class="flag-emblem">⚔</span></div>
+        <div class="flag-bot"></div>
+      </div>
+      <h1 class="country-name">VINSERIA</h1>
+      <p class="subtitle">A Nation Forged in Resilience</p>
+    </div>
+    <div class="bg-deco deco-circle c1"></div>
+    <div class="bg-deco deco-circle c2"></div>
+  </div>
+
+  <!-- Slide 2: Description -->
+  <div class="slide" id="slide-2">
+    <div class="split-layout">
+      <div class="split-label">ABOUT</div>
+      <div class="split-text">
+        <h2>The Nation</h2>
+        <p>Vinseria is a resilient nation built on the belief that strength comes from enduring hardship. Its rugged mountains and fortified cities reflect a history of survival, while its capital blends ancient structures with modern ones — showing how the past is strengthened, not replaced.</p>
+        <p>At its core, Vinserians value perseverance over talent, seeing failure as growth and unity as their foundation — making the country quiet, steady, and unbreakable.</p>
+      </div>
+    </div>
+    <div class="slide-num">02</div>
+  </div>
+
+  <!-- Slide 3: Culture -->
+  <div class="slide" id="slide-3">
+    <h2 class="slide-title">Culture</h2>
+    <div class="culture-grid">
+      <div class="culture-item">
+        <span class="culture-icon">🍲</span>
+        <div>
+          <h3>Food</h3>
+          <p>Hearty communal stews, stone-baked bread, and bitter mountain herbs. Meals are shared — eating alone is considered unusual.</p>
+        </div>
+      </div>
+      <div class="culture-item">
+        <span class="culture-icon">🎶</span>
+        <div>
+          <h3>Music</h3>
+          <p>Deep drums, string instruments, and unison chanting. Songs retell stories of hardship overcome, sung at every major gathering.</p>
+        </div>
+      </div>
+      <div class="culture-item">
+        <span class="culture-icon">🕯</span>
+        <div>
+          <h3>Traditions</h3>
+          <p>The <em>Trial of Stillness</em> — once a year, citizens spend a full day in silence to reflect. The most respected day in the Vinserian calendar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03</div>
+  </div>
+
+  <!-- Slide 4: Laws -->
+  <div class="slide" id="slide-4">
+    <h2 class="slide-title">Laws of Vinseria</h2>
+    <div class="laws-grid">
+      <div class="law-card">
+        <span>🥗</span>
+        <p>Sunday lunch with family is mandatory — at least one green dish must be on the table.</p>
+      </div>
+      <div class="law-card">
+        <span>🎤</span>
+        <p>Wearing a backwards cap in public is banned, unless you can sing the national anthem at full volume.</p>
+      </div>
+      <div class="law-card">
+        <span>📸</span>
+        <p>Every citizen must own at least one plant and post it on social media every Saturday.</p>
+      </div>
+      <div class="law-card">
+        <span>🌈</span>
+        <p>Once a week, free public transport for all — but only if you're wearing colorful clothing.</p>
+      </div>
+    </div>
+    <div class="slide-num">04</div>
+  </div>
+
+  <!-- Slide 5: Attractions -->
+  <div class="slide" id="slide-5">
+    <h2 class="slide-title">Tourist Attractions</h2>
+    <div class="attract-list">
+      <div class="attract-item">
+        <div class="attract-icon">🏔</div>
+        <div class="attract-body">
+          <h3>Mount Servinius</h3>
+          <p>Servinius is said to have discovered Vinseria from this peak after a grueling climb from the north. At that same moment, the other founders were arriving from different directions — turning the mountain into a symbol of endurance and shared fate.</p>
+        </div>
+      </div>
+      <div class="attract-item">
+        <div class="attract-icon">🌊</div>
+        <div class="attract-body">
+          <h3>Alden Bay</h3>
+          <p>Vincentius arrived by sea, his ship entering this calm bay just as the others were reaching land elsewhere. The bay became known as the place of "quiet arrival," marking his role in the founding.</p>
+        </div>
+      </div>
+      <div class="attract-item">
+        <div class="attract-icon">🌉</div>
+        <div class="attract-body">
+          <h3>Barity Bridge</h3>
+          <p>This marks the point where Barily first crossed into Vinseria from the west, immediately claiming it with bold confidence — only to discover the others had arrived at the exact same time. A detail that still gets joked about today.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05</div>
+  </div>
+
+  <!-- Slide 6: Slogan -->
+  <div class="slide" id="slide-6">
+    <div class="slogan-wrap">
+      <div class="slogan-line"></div>
+      <p class="slogan">"We Do Not Break."</p>
+      <div class="slogan-line"></div>
+      <p class="slogan-sub">In Vinseria, every fall is a lesson, every scar a medal. The people of Vinseria do not seek an easy path — they build one, stone by stone, together.</p>
+    </div>
+    <div class="slide-num">06</div>
+    <div class="bg-deco deco-circle c1"></div>
+    <div class="bg-deco deco-circle c2"></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button id="prev" onclick="changeSlide(-1)">&#8592;</button>
+    <div class="nav-dots" id="nav-dots"></div>
+    <button id="next" onclick="changeSlide(1)">&#8594;</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
