@@ -685,3 +685,28 @@ body {
 @media (max-width: 600px) {
   .facts-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Flag question slide ── */
+.flag-q__img {
+  width: clamp(180px, 40vw, 320px);
+  border-radius: 10px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.5);
+  display: block;
+  margin: 1.5rem auto 2rem;
+  opacity: 0;
+}
+.flag-q__question {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  color: var(--accent, #4a9e8a);
+  opacity: 0;
+}
+.flag-q__label { opacity: 0; }
+@keyframes fq-drag {
+  from { opacity: 0; transform: translateX(-80px) rotate(-4deg); }
+  to   { opacity: 1; transform: translateX(0)     rotate(0deg);  }
+}
+@keyframes fq-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}

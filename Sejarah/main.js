@@ -78,7 +78,17 @@ function triggerTransition(slide) {
   if (t === 'scale-up')   slide.classList.add('anim-scale-up');
   if (t === 'split')      slide.classList.add('anim-split');
 
-  if (t === 'stagger-left' || t === 'stagger-up' || t === 'pop-stagger') {
+  if (t === 'flag-question') {
+    const img = slide.querySelector('.flag-q__img');
+    const q   = slide.querySelector('.flag-q__question');
+    const lbl = slide.querySelector('.flag-q__label');
+    [img, q, lbl].forEach(el => { if (el) { el.style.animation = 'none'; el.style.opacity = '0'; } });
+    void slide.offsetWidth;
+    if (lbl) lbl.style.animation = 'fq-fade 0.5s ease 0.1s forwards';
+    if (img) img.style.animation = 'fq-drag 0.6s cubic-bezier(.22,.68,0,1.2) 0.2s forwards';
+    if (q)   q.style.animation   = 'fq-fade 0.6s ease 0.9s forwards';
+    return;
+  }
     slide.querySelectorAll('.stagger-item').forEach((el, i) => {
       el.style.animationDelay = `${i * 80}ms`;
       setTimeout(() => el.classList.add('anim-rise'), i * 80);
