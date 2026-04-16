@@ -81,10 +81,12 @@ function triggerTransition(slide) {
   if (t === 'flag-reveal') {
     const img  = slide.querySelector('.flag-reveal__img');
     const text = slide.querySelector('.flag-reveal__text');
-    [img, text].forEach(el => { if (el) { el.style.animation = 'none'; el.style.opacity = '0'; } });
+    if (img)  { img.style.animation = 'none';  img.style.opacity  = '0'; }
+    if (text) { text.style.animation = 'none'; text.style.opacity = '0'; }
     void slide.offsetWidth;
-    if (img)  img.style.animation  = 'fq-drag 0.6s cubic-bezier(.22,.68,0,1.2) 0.1s forwards';
-    if (text) text.style.animation = 'fq-fade 0.5s ease 0.75s forwards';
+    // img fades in after clone lands (~0.55s)
+    if (img)  img.style.animation  = 'fq-fade 0.3s ease 0.5s forwards';
+    if (text) text.style.animation = 'fq-fade 0.5s ease 0.65s forwards';
   } else if (t === 'flag-question') {
     const img = slide.querySelector('.flag-q__img');
     const q   = slide.querySelector('.flag-q__question');
@@ -115,6 +117,34 @@ function updateButtons() {
   nextBtn.disabled = isLast;
   mobilePrev.disabled = isFirst;
   mobileNext.disabled = isLast;
+}
+
+function flyFlag(onDone) {
+  const srcImg  = document.querySelector('#slide-flag-q .flag-q__img');
+  const dstWrap = document.querySelector('#slide-flag .flag-reveal__img');
+  const question = document.querySelector('#slide-flag-q .flag-q__question');
+  const label    = document.querySelector('#slide-flag-q .flag-q__label');
+
+  const s = srcImg.getBoundingClientRect();
+  const d = dstWrap.getBoundingClientRect();
+
+  // fade out question text
+  [question, label].forEach(el => { el.style.transition = 'opacity 0.3s'; el.style.opacity = '0'; });
+
+  // create flying clone
+  const clone = srcImg.cloneNode();
+  clone.style.cssText = `position:fixed;left:${s.left}px;top:${s.top}px;width:${s.width}px;height:${s.height}px;
+    margin:0;border-radius:10px;box-shadow:0 6px 32px rgba(0,0,0,.5);
+    transition:all 0.55s cubic-bezier(.4,0,.2,1);z-index:9999;pointer-events:none;opacity:1;`;
+  document.body.appendChild(clone);
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    clone.style.left   = d.left + 'px';
+    clone.style.top    = d.top  + 'px';
+    clone.style.width  = d.width  + 'px';
+    clone.style.height = d.height + 'px';
+    clone.addEventListener('transitionend', () => { clone.remove(); onDone(); }, { once: true });
+  }));
 }
 
 function goTo(index) {
@@ -163,10 +193,29 @@ function backToMain() {
 }
 
 totalEl.textContent = slides.length;
+
+const flagQIndex = slides.findIndex(s => s.id === 'slide-flag-q');
+
+function handleNext() {
+  if (current === flagQIndex && current < slides.length - 1) {
+    // make slide-flag visible but transparent so we can measure dstWrap
+    const nextSlide = slides[current + 1];
+    nextSlide.style.visibility = 'hidden';
+    nextSlide.classList.add('active');
+    flyFlag(() => {
+      nextSlide.style.visibility = '';
+      nextSlide.classList.remove('active');
+      goTo(current + 1);
+    });
+  } else {
+    current < slides.length - 1 && goTo(current + 1);
+  }
+}
+
 prevBtn.addEventListener('click', () => current > 0 && goTo(current - 1));
-nextBtn.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
+nextBtn.addEventListener('click', handleNext);
 mobilePrev.addEventListener('click', () => current > 0 && goTo(current - 1));
-mobileNext.addEventListener('click', () => current < slides.length - 1 && goTo(current + 1));
+mobileNext.addEventListener('click', handleNext);
 
 document.querySelectorAll('.fun-fact').forEach(box => {
   box.addEventListener('click', () => goToDetail(box.dataset.detail));
@@ -179,7 +228,7 @@ document.querySelectorAll('.fun-fact').forEach(box => {
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextBtn.click();
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') handleNext();
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevBtn.click();
 });
 
