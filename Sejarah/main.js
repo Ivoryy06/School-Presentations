@@ -184,7 +184,7 @@ document.addEventListener('keydown', e => {
 });
 
 // ── Quiz ──
-document.querySelectorAll('.slide--quiz').forEach(slide => {
+document.querySelectorAll('.slide--quiz:not(.slide--decision)').forEach(slide => {
   slide.querySelectorAll('.quiz__opt').forEach(btn => {
     btn.addEventListener('click', () => {
       if (slide.querySelector('.quiz__opt.answered')) return;
@@ -199,9 +199,28 @@ document.querySelectorAll('.slide--quiz').forEach(slide => {
   });
 });
 
+// ── Decision Quiz ──
+document.querySelectorAll('.slide--decision').forEach(slide => {
+  slide.querySelectorAll('.decision__opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (slide.querySelector('.decision__opt.answered')) return;
+      slide.querySelectorAll('.decision__opt').forEach(b => b.classList.add('answered'));
+      btn.classList.add('chosen');
+      const outcomeId = btn.dataset.outcome;
+      slide.querySelectorAll('.decision__outcome').forEach(el => { el.hidden = true; });
+      document.getElementById(outcomeId).hidden = false;
+    });
+  });
+});
+
 function resetQuiz(slide) {
-  slide.querySelectorAll('.quiz__opt').forEach(b => b.className = 'quiz__opt');
-  slide.querySelector('.quiz__explanation').hidden = true;
+  if (slide.classList.contains('slide--decision')) {
+    slide.querySelectorAll('.decision__opt').forEach(b => b.className = 'quiz__opt decision__opt');
+    slide.querySelectorAll('.decision__outcome').forEach(el => { el.hidden = true; });
+  } else {
+    slide.querySelectorAll('.quiz__opt').forEach(b => b.className = 'quiz__opt');
+    slide.querySelector('.quiz__explanation').hidden = true;
+  }
 }
 
 goTo(0);

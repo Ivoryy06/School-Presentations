@@ -754,3 +754,25 @@ body {
 @media (max-width: 540px) {
   .quiz__options { grid-template-columns: 1fr; }
 }
+/* ── Decision quiz ── */
+.decision__options { grid-template-columns: 1fr 1fr; }
+.decision__opt { display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; }
+.decision__letter {
+  flex-shrink: 0;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 50%;
+  background: rgba(74,158,138,0.25);
+  border: 1px solid var(--accent,#4a9e8a);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; color: var(--accent,#4a9e8a);
+}
+.decision__opt.chosen {
+  background: rgba(74,158,138,0.18) !important;
+  border-color: var(--accent,#4a9e8a) !important;
+  color: #fff;
+}
+.decision__opt.answered:not(.chosen) { opacity: 0.45; }
+.decision__outcome { border-left-color: var(--accent,#4a9e8a); }
+@media (max-width: 540px) {
+  .decision__options { grid-template-columns: 1fr; }
+}
