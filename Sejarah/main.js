@@ -78,7 +78,14 @@ function triggerTransition(slide) {
   if (t === 'scale-up')   slide.classList.add('anim-scale-up');
   if (t === 'split')      slide.classList.add('anim-split');
 
-  if (t === 'flag-question') {
+  if (t === 'flag-reveal') {
+    const img  = slide.querySelector('.flag-reveal__img');
+    const text = slide.querySelector('.flag-reveal__text');
+    [img, text].forEach(el => { if (el) { el.style.animation = 'none'; el.style.opacity = '0'; } });
+    void slide.offsetWidth;
+    if (img)  img.style.animation  = 'fq-drag 0.6s cubic-bezier(.22,.68,0,1.2) 0.1s forwards';
+    if (text) text.style.animation = 'fq-fade 0.5s ease 0.75s forwards';
+  } else if (t === 'flag-question') {
     const img = slide.querySelector('.flag-q__img');
     const q   = slide.querySelector('.flag-q__question');
     const lbl = slide.querySelector('.flag-q__label');
