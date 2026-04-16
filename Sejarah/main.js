@@ -186,14 +186,30 @@ document.addEventListener('keydown', e => {
 // ── Confetti ──
 function confetti() {
   const colors = ['#4ac68a','#f5c842','#e05c5c','#5b9cf6','#c084fc'];
-  for (let i = 0; i < 80; i++) {
+  for (let i = 0; i < 120; i++) {
     const el = document.createElement('div');
-    el.style.cssText = `position:fixed;top:0;left:${Math.random()*100}vw;width:8px;height:8px;
+    const fromSide = Math.random();
+    let startX, startY, dx, dy;
+    if (fromSide < 0.33) {
+      // left side
+      startX = '-10px'; startY = Math.random()*100+'vh';
+      dx = 60+Math.random()*200+'px'; dy = (Math.random()-0.3)*300+'px';
+    } else if (fromSide < 0.66) {
+      // right side
+      startX = '100vw'; startY = Math.random()*100+'vh';
+      dx = -(60+Math.random()*200)+'px'; dy = (Math.random()-0.3)*300+'px';
+    } else {
+      // bottom
+      startX = Math.random()*100+'vw'; startY = '100vh';
+      dx = (Math.random()-0.5)*300+'px'; dy = -(100+Math.random()*400)+'px';
+    }
+    el.style.cssText = `position:fixed;top:${startY};left:${startX};width:9px;height:9px;
       background:${colors[i%colors.length]};border-radius:${Math.random()>0.5?'50%':'2px'};
-      pointer-events:none;z-index:9999;animation:confetti-fall ${0.8+Math.random()*1}s ease forwards`;
-    el.style.setProperty('--dx', (Math.random()-0.5)*200+'px');
+      pointer-events:none;z-index:9999;animation:confetti-fall ${1.2+Math.random()*1.5}s ease forwards`;
+    el.style.setProperty('--dx', dx);
+    el.style.setProperty('--dy', dy);
     document.body.appendChild(el);
-    setTimeout(() => el.remove(), 2000);
+    setTimeout(() => el.remove(), 3000);
   }
 }
 
