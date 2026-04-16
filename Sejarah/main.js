@@ -87,8 +87,7 @@ function triggerTransition(slide) {
     if (lbl) lbl.style.animation = 'fq-fade 0.5s ease 0.1s forwards';
     if (img) img.style.animation = 'fq-drag 0.6s cubic-bezier(.22,.68,0,1.2) 0.2s forwards';
     if (q)   q.style.animation   = 'fq-fade 0.6s ease 0.9s forwards';
-    return;
-  }
+  } else if (t === 'stagger-left' || t === 'stagger-up' || t === 'pop-stagger') {
     slide.querySelectorAll('.stagger-item').forEach((el, i) => {
       el.style.animationDelay = `${i * 80}ms`;
       setTimeout(() => el.classList.add('anim-rise'), i * 80);
