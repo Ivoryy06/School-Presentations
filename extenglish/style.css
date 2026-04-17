@@ -160,6 +160,29 @@ body {
 .c2 { width: 400px; height: 400px; bottom: -150px; left: -100px;
       background: radial-gradient(circle, rgba(59,79,168,0.05), transparent 70%); }
 
+.weather-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.weather-card {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #b8b0cc;
+}
+
+.weather-card span { font-size: 1.4rem; flex-shrink: 0; }
+.weather-card strong { display: block; color: var(--light); margin-bottom: 0.2rem; }
+
 /* ══════════════════════════════
    SLIDE 2
 ══════════════════════════════ */
@@ -330,9 +353,9 @@ body {
 ══════════════════════════════ */
 .laws-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.2rem;
-  max-width: 800px;
+  max-width: 960px;
   width: 100%;
   z-index: 1;
 }
@@ -361,6 +384,7 @@ body {
 .law-card:nth-child(2)::after { background: linear-gradient(135deg, var(--crimson), var(--amber)); }
 .law-card:nth-child(3)::after { background: linear-gradient(135deg, var(--indigo), var(--teal)); }
 .law-card:nth-child(4)::after { background: linear-gradient(135deg, var(--amber), var(--crimson)); }
+.law-card:nth-child(5)::after { background: linear-gradient(135deg, var(--crimson), var(--indigo)); }
 
 .law-card span { font-size: 1.8rem; flex-shrink: 0; }
 .law-card p { font-size: 0.9rem; line-height: 1.7; color: #b8b0cc; }
