@@ -88,6 +88,23 @@ body {
 /* ══════════════════════════════
    SLIDE 1
 ══════════════════════════════ */
+#slide-1 {
+  background: url('img/slide1-bg.jpg') center/cover no-repeat;
+}
+
+#slide-1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+#slide-1 .s1-content,
+#slide-1 .bg-deco {
+  z-index: 1;
+}
+
 .s1-content {
   display: flex;
   flex-direction: column;
