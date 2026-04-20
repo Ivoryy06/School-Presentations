@@ -41,3 +41,25 @@
 **3.** How does specimen preparation impact image quality?
 
 **5.** What are the differences between various staining methods?
+
+---
+
+# Biology Procedure - Slide 4
+
+## Tujuan Penelitian
+
+**1.** To observe cell structure under microscope
+
+**2.** To compare different magnification levels
+
+**3.** To analyze specimen preparation techniques
+
+**5.** To document microscopic observations
+
+## Data Table
+
+| Sample | Time | Temperature |
+|--------|------|-------------|
+| A      | 10min| 25°C        |
+| B      | 15min| 30°C        |
+| C      | 20min| 35°C        |
