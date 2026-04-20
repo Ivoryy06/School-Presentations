@@ -143,17 +143,18 @@ body {
 .slide__body {
   font-size: clamp(0.85rem, 1.6vw, 1.1rem);
   color: var(--light); opacity: 0.8;
-  line-height: 1.9; text-align: left;
+  line-height: 1.9; text-align: center;
   margin-bottom: 1rem;
 }
 
 /* ── Lists ── */
 .body-list {
   list-style: none;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  align-items: center;
 }
 .body-list li {
   font-size: clamp(0.85rem, 1.6vw, 1.1rem);
@@ -162,6 +163,7 @@ body {
   padding-left: 1.5rem;
   position: relative;
   counter-increment: list-counter;
+  text-align: center;
 }
 .body-list li::before {
   content: counter(list-counter) ".";
@@ -187,6 +189,7 @@ body {
   padding-left: 2rem;
   position: relative;
   counter-increment: step-counter;
+  text-align: center;
 }
 .steps li::before {
   content: counter(step-counter);
@@ -205,7 +208,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  text-align: left;
+  text-align: center;
 }
 .info-card {
   border: 1px solid var(--green-dim);
@@ -223,6 +226,7 @@ body {
   font-size: clamp(0.8rem, 1.4vw, 0.95rem);
   color: var(--light); opacity: 0.75;
   line-height: 1.7;
+  text-align: center;
 }
 
 /* ── Variable Cards ── */
@@ -230,7 +234,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  text-align: left;
+  text-align: center;
 }
 .var-card {
   border-radius: 6px;
@@ -266,6 +270,7 @@ body {
   padding-left: 1rem;
   position: relative;
   line-height: 1.5;
+  text-align: center;
 }
 .var-card ul li::before {
   content: '–';
@@ -278,7 +283,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  text-align: left;
+  text-align: center;
 }
 .col-heading {
   font-size: 1rem;
@@ -296,7 +301,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-  text-align: left;
+  text-align: center;
 }
 .obs-table th {
   background: var(--green-dim);
@@ -537,6 +542,7 @@ body {
   width: 45%;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
