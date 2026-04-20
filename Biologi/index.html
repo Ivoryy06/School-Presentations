@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fermentasi Yogurt – Biologi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SLIDE 1: Title -->
+  <section class="slide slide--title active" id="slide-1" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <canvas class="slide__particles" id="particles"></canvas>
+    <div class="bio-dna" aria-hidden="true"></div>
+    <div class="bio-cells" aria-hidden="true">
+      <div class="bio-cell bio-cell--1"></div>
+      <div class="bio-cell bio-cell--2"></div>
+      <div class="bio-cell bio-cell--3"></div>
+    </div>
+    <div class="slide__content slide__content--fadein" style="text-align:center;">
+      <p class="slide__label">Laporan Praktikum Biologi</p>
+      <h1 class="slide__title">Perbandingan Hasil Fermentasi<br>Produk Yogurt<br>Berdasarkan Jenis Susu</h1>
+      <div class="slide__divider"></div>
+      <p class="slide__verse">"Fermentasi adalah seni mengubah susu menjadi sesuatu yang lebih baik."</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: Latar Belakang -->
+  <section class="slide slide--body" id="slide-2" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Pendahuluan</p>
+      <h2 class="slide__title slide__title--sm">Latar Belakang</h2>
+      <div class="slide__divider"></div>
+      <p class="slide__body">Yogurt adalah produk susu yang telah difermentasi oleh <strong>bakteri asam laktat (BAL)</strong>. Proses ini mengubah gula susu (laktosa) menjadi asam laktat, menghasilkan rasa asam segar dan tekstur yang kental.</p>
+      <p class="slide__body">Yogurt kaya akan <strong>protein, kalsium, dan probiotik</strong> yang sangat baik untuk kesehatan pencernaan dan sistem imun tubuh.</p>
+      <p class="slide__body">Jenis susu yang digunakan dalam pembuatan yogurt diduga memengaruhi kualitas hasil fermentasi. <strong>Susu UHT full cream</strong> memiliki kadar lemak tinggi (≥3,5%), sedangkan <strong>susu UHT low fat</strong> memiliki kadar lemak rendah (≤1,5%). Perbedaan komposisi ini berpotensi menghasilkan yogurt dengan karakteristik yang berbeda.</p>
+      <p class="slide__body">Oleh karena itu, perlu dilakukan penelitian untuk membandingkan hasil fermentasi yogurt dari kedua jenis susu tersebut.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: Rumusan Masalah -->
+  <section class="slide slide--body" id="slide-3" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Pendahuluan</p>
+      <h2 class="slide__title slide__title--sm">Rumusan Masalah</h2>
+      <div class="slide__divider"></div>
+      <ol class="body-list stagger-item">
+        <li>Apakah jenis susu (UHT full cream dan UHT low fat) berpengaruh terhadap <strong>tekstur</strong> yogurt yang dihasilkan?</li>
+        <li>Apakah jenis susu berpengaruh terhadap <strong>tingkat keasaman (pH)</strong> yogurt?</li>
+        <li>Bagaimana perbedaan <strong>rasa dan aroma</strong> yogurt dari susu full cream dibandingkan susu low fat?</li>
+        <li>Jenis susu manakah yang menghasilkan yogurt dengan <strong>kualitas organoleptik terbaik</strong>?</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: Tujuan -->
+  <section class="slide slide--body" id="slide-4" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Pendahuluan</p>
+      <h2 class="slide__title slide__title--sm">Tujuan Penelitian</h2>
+      <div class="slide__divider"></div>
+      <ol class="body-list stagger-item">
+        <li>Membandingkan <strong>tekstur</strong> yogurt yang dihasilkan dari susu UHT full cream dan susu UHT low fat.</li>
+        <li>Menganalisis perbedaan <strong>tingkat keasaman</strong> yogurt berdasarkan jenis susu yang digunakan.</li>
+        <li>Mendeskripsikan perbedaan <strong>rasa dan aroma</strong> yogurt dari kedua jenis susu.</li>
+        <li>Menentukan jenis susu yang menghasilkan yogurt dengan <strong>kualitas terbaik</strong> secara organoleptik.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: Tinjauan Pustaka -->
+  <section class="slide slide--body" id="slide-5" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Kajian Teori</p>
+      <h2 class="slide__title slide__title--sm">Tinjauan Pustaka</h2>
+      <div class="slide__divider"></div>
+      <div class="card-grid">
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Yogurt</div>
+          <p>Produk fermentasi susu oleh BAL. Fermentasi menghasilkan asam laktat yang menurunkan pH dan menyebabkan koagulasi protein susu (kasein), membentuk tekstur kental.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Bakteri Asam Laktat</div>
+          <p>Starter yogurt mengandung <em>Lactobacillus bulgaricus</em> (penghasil asam) dan <em>Streptococcus thermophilus</em> (penghasil aroma). Keduanya bekerja secara sinergis.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Susu Full Cream</div>
+          <p>Kadar lemak ≥3,5%. Kandungan lemak tinggi membantu pembentukan gel protein yang lebih padat, menghasilkan tekstur lebih kental dan rasa lebih gurih.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Susu Low Fat</div>
+          <p>Kadar lemak ≤1,5%. Kandungan lemak rendah menghasilkan tekstur lebih encer dan rasa lebih ringan, cocok untuk konsumen yang membatasi asupan lemak.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: Variabel -->
+  <section class="slide slide--body" id="slide-6" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Metodologi</p>
+      <h2 class="slide__title slide__title--sm">Jenis Variabel</h2>
+      <div class="slide__divider"></div>
+      <div class="var-grid">
+        <div class="var-card var-card--bebas stagger-item">
+          <div class="var-card__label">Variabel Bebas</div>
+          <div class="var-card__title">Jenis Susu</div>
+          <ul>
+            <li>Susu UHT Full Cream</li>
+            <li>Susu UHT Low Fat</li>
+          </ul>
+        </div>
+        <div class="var-card var-card--terikat stagger-item">
+          <div class="var-card__label">Variabel Terikat</div>
+          <div class="var-card__title">Hasil Fermentasi</div>
+          <ul>
+            <li>Tekstur yogurt</li>
+            <li>Rasa &amp; aroma</li>
+            <li>Keasaman (pH)</li>
+            <li>Warna</li>
+          </ul>
+        </div>
+        <div class="var-card var-card--kontrol stagger-item">
+          <div class="var-card__label">Variabel Kontrol</div>
+          <div class="var-card__title">Faktor Tetap</div>
+          <ul>
+            <li>Volume susu (500 ml)</li>
+            <li>Jumlah starter</li>
+            <li>Suhu fermentasi (40°C)</li>
+            <li>Waktu fermentasi (7–9 jam)</li>
+            <li>Prosedur pembuatan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: Alat & Bahan -->
+  <section class="slide slide--body" id="slide-7" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Metodologi</p>
+      <h2 class="slide__title slide__title--sm">Alat dan Bahan</h2>
+      <div class="slide__divider"></div>
+      <div class="two-col">
+        <div>
+          <p class="col-heading">Alat</p>
+          <ol class="body-list stagger-item">
+            <li>Wadah penyimpanan yogurt</li>
+            <li>Wadah tertutup</li>
+            <li>Panci</li>
+            <li>Spatula / pengaduk</li>
+            <li>Gelas ukur</li>
+            <li>Termometer</li>
+            <li>Kompor</li>
+            <li>Baskom</li>
+          </ol>
+        </div>
+        <div>
+          <p class="col-heading">Bahan</p>
+          <ol class="body-list stagger-item">
+            <li>Susu UHT Full Cream (500 ml)</li>
+            <li>Susu UHT Low Fat (500 ml)</li>
+            <li>Starter / bibit yogurt plain</li>
+            <li>Bubuk perisa (opsional)</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: Prosedur Kerja -->
+  <section class="slide slide--body" id="slide-8" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Metodologi</p>
+      <h2 class="slide__title slide__title--sm">Prosedur Kerja</h2>
+      <p class="slide__subtitle" style="margin-bottom:1rem;font-size:0.9rem;">Dilakukan untuk kedua jenis susu secara terpisah</p>
+      <div class="slide__divider"></div>
+      <ol class="steps stagger-item">
+        <li>Tuangkan susu UHT ke dalam gelas ukur sebanyak <strong>500 ml</strong>.</li>
+        <li>Masukkan susu ke dalam panci.</li>
+        <li>Panaskan susu hingga <strong>suhu 85°C</strong> sambil terus diaduk agar tidak gosong.</li>
+        <li>Matikan kompor, lalu letakkan panci dalam baskom berisi air untuk mendinginkan.</li>
+        <li>Di wadah terpisah, campurkan starter/bibit yogurt dengan sedikit susu, aduk rata.</li>
+        <li>Tunggu suhu susu dalam panci turun hingga <strong>±40°C</strong>.</li>
+        <li>Tuangkan larutan starter ke dalam panci, aduk hingga merata.</li>
+        <li>Pindahkan campuran ke dalam wadah tertutup.</li>
+        <li>Diamkan selama <strong>7–9 jam</strong> pada suhu ruang <em>(jangan dimasukkan kulkas)</em>.</li>
+        <li>Setelah fermentasi selesai, masukkan yogurt ke dalam kulkas untuk didinginkan.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: Hasil Pengamatan -->
+  <section class="slide slide--body" id="slide-9" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Data</p>
+      <h2 class="slide__title slide__title--sm">Hasil Pengamatan</h2>
+      <div class="slide__divider"></div>
+      <div class="table-wrap">
+        <table class="obs-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Susu UHT Full Cream</th>
+              <th>Susu UHT Low Fat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Tekstur</td><td>Kental, padat</td><td>Lebih encer, lembut</td></tr>
+            <tr><td>Warna</td><td>Putih kekuningan</td><td>Putih bersih</td></tr>
+            <tr><td>Aroma</td><td>Asam gurih</td><td>Asam ringan</td></tr>
+            <tr><td>Rasa</td><td>Asam, gurih, creamy</td><td>Asam, segar, ringan</td></tr>
+            <tr><td>pH (estimasi)</td><td>±4,0 – 4,2</td><td>±4,3 – 4,5</td></tr>
+            <tr><td>Waktu Fermentasi</td><td>7–9 jam</td><td>7–9 jam</td></tr>
+            <tr><td>Volume Akhir</td><td>±480 ml</td><td>±480 ml</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: Pembahasan -->
+  <section class="slide slide--body" id="slide-10" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Analisis</p>
+      <h2 class="slide__title slide__title--sm">Pembahasan</h2>
+      <div class="slide__divider"></div>
+      <div class="card-grid">
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Tekstur</div>
+          <p>Yogurt dari susu full cream lebih kental karena kandungan lemak yang tinggi membantu pembentukan gel protein yang lebih padat selama fermentasi.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Keasaman (pH)</div>
+          <p>Susu low fat menghasilkan pH sedikit lebih tinggi (kurang asam) karena kadar laktosa yang relatif lebih rendah sehingga produksi asam laktat sedikit berkurang.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Rasa &amp; Aroma</div>
+          <p>Full cream menghasilkan rasa lebih gurih dan creamy akibat lemak susu. Low fat menghasilkan rasa lebih segar dan ringan, cocok untuk konsumen yang membatasi asupan lemak.</p>
+        </div>
+        <div class="info-card stagger-item">
+          <div class="info-card__title">Aktivitas Bakteri</div>
+          <p>Kedua jenis susu berhasil difermentasi dengan baik oleh starter yogurt. BAL tumbuh optimal pada suhu 40°C selama 7–9 jam pada kedua perlakuan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: Kesimpulan -->
+  <section class="slide slide--body" id="slide-11" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <div class="bio-hex" aria-hidden="true"></div>
+    <div class="slide__content slide__content--fadein slide__content--wide">
+      <p class="slide__label">Penutup</p>
+      <h2 class="slide__title slide__title--sm">Kesimpulan</h2>
+      <div class="slide__divider"></div>
+      <ol class="body-list stagger-item">
+        <li>Jenis susu berpengaruh nyata terhadap <strong>tekstur, rasa, aroma, dan keasaman</strong> yogurt.</li>
+        <li>Yogurt dari susu UHT full cream menghasilkan tekstur lebih <strong>kental</strong>, rasa lebih <strong>gurih</strong>, dan pH lebih <strong>rendah</strong>.</li>
+        <li>Yogurt dari susu UHT low fat memiliki tekstur lebih <strong>encer</strong>, rasa lebih <strong>ringan dan segar</strong>, serta pH sedikit lebih tinggi.</li>
+        <li>Kedua jenis susu dapat difermentasi dengan baik menggunakan starter yogurt pada suhu dan waktu fermentasi yang sama.</li>
+        <li>Pemilihan jenis susu dapat disesuaikan dengan kebutuhan: <strong>full cream</strong> untuk tekstur optimal, <strong>low fat</strong> untuk pilihan rendah lemak.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SLIDE 12: Thank You -->
+  <section class="slide slide--title" id="slide-12" data-transition="fade-rise">
+    <div class="slide__light-ray"></div>
+    <div class="slide__light-ray slide__light-ray--left"></div>
+    <canvas class="slide__particles" id="particles-thanks"></canvas>
+    <div class="slide__content slide__content--fadein" style="text-align:center;">
+      <h2 class="slide__title">Terima Kasih</h2>
+      <div class="slide__divider"></div>
+      <p class="slide__subtitle">Perbandingan Hasil Fermentasi Produk Yogurt Berdasarkan Jenis Susu</p>
+      <p class="slide__verse" style="margin-top:2rem;">"Ilmu pengetahuan dimulai dari rasa ingin tahu."</p>
+    </div>
+  </section>
+
+  <nav class="nav">
+    <button class="nav__btn" id="prev" disabled>&#8592;</button>
+    <span class="nav__counter"><span id="current">1</span> / <span id="total">1</span></span>
+    <button class="nav__btn" id="next" disabled>&#8594;</button>
+  </nav>
+
+  <button class="mobile-nav mobile-nav--left" id="mobilePrev" disabled>&#8592;</button>
+  <button class="mobile-nav mobile-nav--right" id="mobileNext" disabled>&#8594;</button>
+
+  <div class="progress-bar"><div class="progress-bar__fill" id="progress"></div></div>
+
+  <script src="main.js"></script>
+</body>
+</html>

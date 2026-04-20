@@ -1,0 +1,476 @@
+/* ── Variables ── */
+:root {
+  --dark:    #080f0a;
+  --dark-2:  #0d1a10;
+  --green:   #4caf7d;
+  --green-dim:#2a6645;
+  --lime:    #8bc34a;
+  --light:   #e8f5ee;
+  --muted:   #4a6b55;
+  --ray:     rgba(76, 175, 125, 0.12);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--dark);
+  color: var(--light);
+  font-family: 'Georgia', serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Slides ── */
+.slide { display: none; flex: 1; position: relative; overflow: hidden; }
+.slide.active { display: flex; }
+
+/* ── Title Slide ── */
+.slide--title {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 60% 40%, #0a1f10 0%, var(--dark) 70%);
+}
+
+/* ── Body Slide ── */
+.slide--body {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #0a1a0e 0%, var(--dark) 70%);
+  overflow-y: auto;
+}
+
+/* Light ray */
+.slide__light-ray {
+  position: absolute;
+  top: -10%; right: 15%;
+  width: 2px; height: 130%;
+  background: linear-gradient(to bottom, transparent, var(--green), transparent);
+  opacity: 0.2;
+  transform: rotate(-15deg);
+  filter: blur(18px);
+  pointer-events: none;
+  animation: ray-pulse 4s ease-in-out infinite;
+}
+.slide__light-ray::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -40px;
+  width: 80px; height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--ray), transparent);
+  filter: blur(30px);
+}
+@keyframes ray-pulse {
+  0%, 100% { opacity: 0.15; filter: blur(18px); }
+  50%       { opacity: 0.3;  filter: blur(12px); }
+}
+.slide__light-ray--left {
+  right: auto; left: 10%;
+  width: 6px;
+  transform: rotate(12deg);
+  opacity: 0.08;
+  filter: blur(32px);
+  animation: ray-pulse-left 4s ease-in-out infinite;
+}
+.slide__light-ray--left::before { width: 120px; left: -60px; filter: blur(50px); }
+@keyframes ray-pulse-left {
+  0%, 100% { opacity: 0.06; filter: blur(32px); }
+  50%       { opacity: 0.12; filter: blur(22px); }
+}
+
+/* Particles */
+.slide__particles {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+/* Fade-in */
+.slide__content--fadein { animation: fadein 1.4s ease forwards; }
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Content ── */
+.slide__content {
+  position: relative; z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  padding: 2rem;
+}
+.slide__content--wide { max-width: 98%; width: 100%; padding: 1.5rem 2.5rem; }
+
+.slide__label {
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-dim);
+  margin-bottom: 1.25rem;
+}
+
+.slide__title {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: normal;
+  color: var(--green);
+  line-height: 1.2;
+  text-shadow: 0 0 40px rgba(76,175,125,0.3);
+  margin-bottom: 1rem;
+}
+.slide__title--sm { font-size: clamp(1.4rem, 3.5vw, 2.8rem); }
+
+.slide__subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  color: var(--light); opacity: 0.7;
+  line-height: 1.7; margin-bottom: 2rem;
+}
+
+.slide__divider {
+  width: 60px; height: 1px;
+  background: var(--green-dim);
+  margin: 0 auto 1.5rem;
+}
+
+.slide__verse {
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.8vw, 1.2rem);
+  color: var(--light); opacity: 0.6;
+  line-height: 1.8;
+}
+
+.slide__body {
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  color: var(--light); opacity: 0.8;
+  line-height: 1.9; text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* ── Lists ── */
+.body-list {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.body-list li {
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  color: var(--light); opacity: 0.85;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  position: relative;
+  counter-increment: list-counter;
+}
+.body-list li::before {
+  content: counter(list-counter) ".";
+  position: absolute; left: 0;
+  color: var(--green);
+  font-weight: bold;
+}
+.body-list { counter-reset: list-counter; }
+
+/* ── Steps ── */
+.steps {
+  list-style: none;
+  counter-reset: step-counter;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 2rem;
+  text-align: left;
+}
+.steps li {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: var(--light); opacity: 0.82;
+  line-height: 1.6;
+  padding-left: 2rem;
+  position: relative;
+  counter-increment: step-counter;
+}
+.steps li::before {
+  content: counter(step-counter);
+  position: absolute; left: 0;
+  width: 1.4rem; height: 1.4rem;
+  background: var(--green-dim);
+  color: var(--light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-family: system-ui, sans-serif;
+  top: 0.1rem;
+}
+
+/* ── Card Grid ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+.info-card {
+  border: 1px solid var(--green-dim);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  background: rgba(76,175,125,0.04);
+}
+.info-card__title {
+  font-size: 1rem;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.info-card p {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: var(--light); opacity: 0.75;
+  line-height: 1.7;
+}
+
+/* ── Variable Cards ── */
+.var-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+.var-card {
+  border-radius: 6px;
+  padding: 1.1rem 1.2rem;
+  border-top: 3px solid;
+  background: rgba(255,255,255,0.03);
+}
+.var-card--bebas  { border-color: var(--green); }
+.var-card--terikat { border-color: #5b9cf6; }
+.var-card--kontrol { border-color: #f5a623; }
+.var-card__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+  font-family: system-ui, sans-serif;
+}
+.var-card__title {
+  font-size: 1.1rem;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+}
+.var-card--terikat .var-card__title { color: #5b9cf6; }
+.var-card--kontrol .var-card__title { color: #f5a623; }
+.var-card ul {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.var-card ul li {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: var(--light); opacity: 0.78;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.var-card ul li::before {
+  content: '–';
+  position: absolute; left: 0;
+  color: var(--green-dim);
+}
+
+/* ── Two Column ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  text-align: left;
+}
+.col-heading {
+  font-size: 1rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: system-ui, sans-serif;
+  font-style: italic;
+}
+
+/* ── Table ── */
+.table-wrap { overflow-x: auto; }
+.obs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-align: left;
+}
+.obs-table th {
+  background: var(--green-dim);
+  color: var(--light);
+  padding: 0.7rem 1rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+.obs-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(76,175,125,0.12);
+  color: var(--light); opacity: 0.82;
+  line-height: 1.5;
+}
+.obs-table tr:nth-child(even) td { background: rgba(76,175,125,0.05); }
+.obs-table tr:hover td { background: rgba(76,175,125,0.1); }
+.obs-table td:first-child { color: var(--green); opacity: 1; font-style: italic; }
+
+/* ── Nav ── */
+.nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; padding: 1rem;
+  background: var(--dark-2);
+  border-top: 1px solid #0f2018;
+}
+.nav__btn {
+  background: none;
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  width: 48px; height: 48px;
+  border-radius: 50%; cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s, opacity 0.2s;
+}
+.nav__btn:hover:not(:disabled) { background: var(--green-dim); }
+.nav__btn:disabled { opacity: 0.25; cursor: default; }
+.nav__counter {
+  font-size: 0.8rem; color: var(--muted);
+  letter-spacing: 0.1em; min-width: 50px; text-align: center;
+}
+
+/* ── Mobile Nav ── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(76,175,125,0.2);
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  font-size: 2rem;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, opacity 0.2s;
+}
+.mobile-nav:active { background: var(--green-dim); }
+.mobile-nav:disabled { opacity: 0.25; cursor: default; }
+.mobile-nav--left { left: 1rem; }
+.mobile-nav--right { right: 1rem; }
+
+@media (max-width: 768px) {
+  .mobile-nav { display: block; }
+  .nav { display: none; }
+  .card-grid, .var-grid, .two-col, .steps { grid-template-columns: 1fr; }
+}
+
+/* ── Progress Bar ── */
+.progress-bar { height: 2px; background: #0f2018; }
+.progress-bar__fill {
+  height: 100%; background: var(--green);
+  transition: width 0.3s ease; width: 100%;
+}
+
+/* ── Animations ── */
+.anim-slide-left  { animation: slide-left  0.45s cubic-bezier(.22,.68,0,1.1) forwards; }
+.anim-slide-right { animation: slide-right 0.45s cubic-bezier(.22,.68,0,1.1) forwards; }
+@keyframes slide-left  { from { opacity:0; transform:translateX(60px);  } to { opacity:1; transform:translateX(0); } }
+@keyframes slide-right { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+
+.stagger-item { opacity: 0; }
+.anim-rise { animation: rise 0.5s ease forwards; }
+@keyframes rise { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── Biology Decorations ── */
+
+/* Hexagonal grid watermark (body slides) */
+.bio-hex {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  opacity: 0.045;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpolygon points='28,2 54,16 54,44 28,58 2,44 2,16' fill='none' stroke='%234caf7d' stroke-width='1'/%3E%3Cpolygon points='28,52 54,66 54,94 28,108 2,94 2,66' fill='none' stroke='%234caf7d' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+}
+
+/* Floating cell circles (title slide) */
+.bio-cells { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.bio-cell {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(76,175,125,0.18);
+  animation: cell-float 8s ease-in-out infinite;
+}
+.bio-cell::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(76,175,125,0.1);
+  inset: 18%;
+}
+.bio-cell--1 { width: 220px; height: 220px; top: 8%;  left: 4%;  animation-delay: 0s;   }
+.bio-cell--2 { width: 140px; height: 140px; top: 55%; right: 6%; animation-delay: 2.5s; }
+.bio-cell--3 { width: 90px;  height: 90px;  bottom: 10%; left: 30%; animation-delay: 5s; }
+@keyframes cell-float {
+  0%, 100% { transform: translateY(0)   scale(1);    opacity: 0.6; }
+  50%       { transform: translateY(-14px) scale(1.04); opacity: 1;   }
+}
+
+/* DNA helix (title slide) — two interleaved sine-wave strands via CSS */
+.bio-dna {
+  position: absolute;
+  right: 6%;
+  top: 0; bottom: 0;
+  width: 60px;
+  pointer-events: none; z-index: 0;
+  overflow: hidden;
+}
+.bio-dna::before,
+.bio-dna::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0;
+  width: 2px; height: 200%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 10px,
+    rgba(76,175,125,0.35) 10px,
+    rgba(76,175,125,0.35) 14px
+  );
+  animation: dna-scroll 6s linear infinite;
+  transform-origin: top center;
+}
+.bio-dna::before {
+  transform: translateX(-12px) skewX(-8deg);
+}
+.bio-dna::after {
+  transform: translateX(10px) skewX(8deg);
+  animation-delay: -3s;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 10px,
+    rgba(139,195,74,0.28) 10px,
+    rgba(139,195,74,0.28) 14px
+  );
+}
+@keyframes dna-scroll {
+  from { top: 0; }
+  to   { top: -100%; }
+}
+
+/* Molecule dots on info-cards */
+.info-card { position: relative; overflow: hidden; }
+.info-card::before {
+  content: '⬡';
+  position: absolute;
+  bottom: -0.4rem; right: 0.4rem;
+  font-size: 3rem;
+  color: var(--green);
+  opacity: 0.06;
+  pointer-events: none;
+  line-height: 1;
+}
