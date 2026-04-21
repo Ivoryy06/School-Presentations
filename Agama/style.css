@@ -649,6 +649,13 @@ body {
   background: radial-gradient(ellipse at 50% 30%, #1a120d 0%, var(--dark) 72%);
 }
 
+.slide--pengorbanan {
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 55% 35%, #15100c 0%, var(--dark) 70%);
+  overflow-y: auto;
+}
+
 .desc-list {
   list-style: none;
   display: flex;
