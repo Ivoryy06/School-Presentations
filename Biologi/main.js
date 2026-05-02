@@ -1,4 +1,4 @@
-// ── Particles ──
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -38,7 +38,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 animateParticles();
 
-// ── Slide navigation ──
+
 const prevBtn    = document.getElementById('prev');
 const nextBtn    = document.getElementById('next');
 const currentEl  = document.getElementById('current');

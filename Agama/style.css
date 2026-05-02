@@ -1,4 +1,4 @@
-/* ── Variables ── */
+
 :root {
   --dark:    #0d0d0f;
   --dark-2:  #16151a;
@@ -9,7 +9,7 @@
   --ray:     rgba(201, 168, 76, 0.12);
 }
 
-/* ── Reset ── */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -22,7 +22,7 @@ body {
   flex-direction: column;
 }
 
-/* ── Slides ── */
+
 .slide {
   display: none;
   flex: 1;
@@ -31,14 +31,14 @@ body {
 }
 .slide.active { display: flex; }
 
-/* ── Title Slide ── */
+
 .slide--title {
   align-items: center;
   justify-content: center;
   background: radial-gradient(ellipse at 60% 40%, #1e1710 0%, var(--dark) 70%);
 }
 
-/* Light ray effect */
+
 .slide__light-ray {
   position: absolute;
   top: -10%;
@@ -67,7 +67,7 @@ body {
   50%       { opacity: 0.38; filter: blur(12px); }
 }
 
-/* Second ray — left side, dimmer and wider */
+
 .slide__light-ray--left {
   right: auto;
   left: 10%;
@@ -88,7 +88,7 @@ body {
   50%       { opacity: 0.16; filter: blur(22px); }
 }
 
-/* Trinity layout */
+
 .slide__title-layout {
   position: relative;
   display: flex;
@@ -148,7 +148,7 @@ body {
 }
 
 
-/* Cross behind content */
+
 .slide__cross {
   position: absolute;
   left: 50%;
@@ -188,7 +188,7 @@ body {
   50%       { opacity: 0.22; filter: drop-shadow(0 0 16px rgba(201,168,76,0.4)); }
 }
 
-/* Particles canvas */
+
 .slide__particles {
   position: absolute;
   inset: 0;
@@ -197,7 +197,7 @@ body {
   pointer-events: none;
 }
 
-/* Fade-in */
+
 .slide__content--fadein {
   animation: fadein 1.4s ease forwards;
 }
@@ -206,7 +206,7 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Content ── */
+
 .slide__content {
   position: relative;
   z-index: 1;
@@ -262,7 +262,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ── Context Slide ── */
+
 .slide--context {
   align-items: center;
   justify-content: center;
@@ -315,7 +315,7 @@ body {
   text-align: center;
 }
 
-/* ── Progress Bar ── */
+
 .progress-bar {
   height: 2px;
   background: #1f1d24;
@@ -327,7 +327,7 @@ body {
   width: 100%;
 }
 
-/* ── Timeline Slide ── */
+
 .slide--timeline {
   align-items: center;
   justify-content: center;
@@ -350,7 +350,7 @@ body {
   height: 300px;
 }
 
-/* horizontal line through the middle */
+
 .timeline::before {
   content: '';
   position: absolute;
@@ -371,7 +371,7 @@ body {
   height: 100%;
 }
 
-/* dot sits exactly on the line */
+
 .timeline__dot {
   position: absolute;
   top: 50%;
@@ -389,7 +389,7 @@ body {
   box-shadow: 0 0 12px rgba(201,168,76,0.8);
 }
 
-/* body: odd = top half, even = bottom half */
+
 .timeline__body {
   position: absolute;
   width: 100%;
@@ -435,7 +435,7 @@ body {
   margin: 0 auto;
 }
 
-/* ── Suffering Slide ── */
+
 .slide--suffering {
   align-items: center;
   justify-content: center;
@@ -495,7 +495,7 @@ body {
   margin-top: 0.5rem !important;
 }
 
-/* ── Tokoh Overview ── */
+
 .slide--tokoh-overview {
   align-items: center;
   justify-content: center;
@@ -525,7 +525,7 @@ body {
 .tokoh-chip--yudas   { color: #7a5c8a; border-color: #7a5c8a33; background: rgba(122,92,138,0.07); }
 .tokoh-chip--raja    { color: #b85555; border-color: #b8555533; background: rgba(184,85,85,0.07); }
 
-/* ── Character Slides ── */
+
 .slide--character.active {
   display: flex;
   flex-direction: row;
@@ -597,7 +597,7 @@ body {
   opacity: 0.8;
 }
 
-/* Per-character colors */
+
 .slide--yesus  { background: radial-gradient(ellipse at 60% 50%, #1c1608 0%, var(--dark) 65%); }
 .slide--yesus  .character__name,
 .slide--yesus  .character__verse { color: #c9a84c; }
@@ -628,7 +628,7 @@ body {
 .slide--kayafas .character__role  { color: #b85555; }
 .slide--kayafas .character__verse { border-color: #b8555555; }
 
-/* ── Deskripsi Slide ── */
+
 .slide--deskripsi {
   align-items: center;
   justify-content: center;
@@ -716,7 +716,7 @@ body {
   line-height: 1.75;
 }
 
-/* ── Slide Transitions ── */
+
 @keyframes t-fade-rise   { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 @keyframes t-slide-left  { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
 @keyframes t-slide-right { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
@@ -730,15 +730,15 @@ body {
 .anim-rise       { animation: t-rise       0.4s ease forwards; }
 .anim-pop        { animation: t-pop        0.35s ease forwards; }
 
-/* split: img from left, text from right */
+
 .slide--character.anim-split .character__img-side { animation: t-slide-right 0.5s ease forwards; }
 .slide--character.anim-split .character__text-side { animation: t-slide-left 0.5s ease forwards; }
 
-/* stagger helpers — set via JS inline delay */
+
 .stagger-item { opacity: 0; }
 .stagger-item.anim-rise { opacity: 1; }
 
-/* ── Fullscreen scaling ── */
+
 :fullscreen .slide__title        { font-size: clamp(2.8rem, 6vw, 7rem); }
 :fullscreen .slide__title--sm    { font-size: clamp(2rem, 4.5vw, 4.5rem); }
 :fullscreen .slide__subtitle     { font-size: clamp(1.1rem, 2.5vw, 2rem); }
@@ -755,13 +755,13 @@ body {
 :fullscreen .slide__body         { margin-bottom: 0.75rem; }
 :fullscreen .slide__divider      { margin: 0 auto 1rem; }
 
-/* ── Mobile: allow scrolling on small screens ── */
+
 @media (max-width: 768px) and (pointer: coarse) {
   body { overflow: auto; height: auto; min-height: 100vh; }
   .slide { overflow-y: auto; }
 }
 
-/* ── Detail Overlay ── */
+
 .detail-overlay {
   display: none;
   position: fixed;

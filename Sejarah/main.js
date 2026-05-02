@@ -1,4 +1,4 @@
-// ── Suffering/pillars accordion ──
+
 document.querySelectorAll('.suffer-card').forEach(card => {
   card.addEventListener('click', () => {
     const isActive = card.classList.contains('active');
@@ -10,7 +10,7 @@ document.querySelectorAll('.suffer-card').forEach(card => {
   });
 });
 
-// ── Particles ──
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -50,7 +50,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 animateParticles();
 
-// ── Slide navigation ──
+
 const prevBtn    = document.getElementById('prev');
 const nextBtn    = document.getElementById('next');
 const currentEl  = document.getElementById('current');
@@ -65,7 +65,7 @@ function triggerTransition(slide, index) {
   let t = slide.dataset.transition;
   if (!t) return;
 
-  // zig-zag: even index slides enter from right, odd from left
+  
   if (t === 'fade-rise' || t === 'slide-left') {
     t = (index % 2 === 0) ? 'slide-left' : 'slide-right-custom';
   }
@@ -183,7 +183,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevBtn.click();
 });
 
-// ── Confetti ──
+
 function confetti() {
   const colors = ['#4ac68a','#f5c842','#e05c5c','#5b9cf6','#c084fc'];
   for (let i = 0; i < 120; i++) {
@@ -191,15 +191,15 @@ function confetti() {
     const fromSide = Math.random();
     let startX, startY, dx, dy;
     if (fromSide < 0.33) {
-      // left side
+      
       startX = '-10px'; startY = Math.random()*100+'vh';
       dx = 60+Math.random()*200+'px'; dy = (Math.random()-0.3)*300+'px';
     } else if (fromSide < 0.66) {
-      // right side
+      
       startX = '100vw'; startY = Math.random()*100+'vh';
       dx = -(60+Math.random()*200)+'px'; dy = (Math.random()-0.3)*300+'px';
     } else {
-      // bottom
+      
       startX = Math.random()*100+'vw'; startY = '100vh';
       dx = (Math.random()-0.5)*300+'px'; dy = -(100+Math.random()*400)+'px';
     }
@@ -213,7 +213,7 @@ function confetti() {
   }
 }
 
-// ── Quiz ──
+
 document.querySelectorAll('.slide--quiz:not(.slide--decision)').forEach(slide => {
   slide.querySelectorAll('.quiz__opt').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -230,7 +230,7 @@ document.querySelectorAll('.slide--quiz:not(.slide--decision)').forEach(slide =>
   });
 });
 
-// ── Decision Quiz ──
+
 document.querySelectorAll('.slide--decision').forEach(slide => {
   slide.querySelectorAll('.decision__opt').forEach(btn => {
     btn.addEventListener('click', () => {

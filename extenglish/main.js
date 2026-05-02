@@ -2,7 +2,7 @@ const slides = document.querySelectorAll('.slide');
 const dotsContainer = document.getElementById('nav-dots');
 let current = 0;
 
-// Build dots
+
 slides.forEach((_, i) => {
   const dot = document.createElement('div');
   dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -25,7 +25,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
 });
 
-// Snow effect for slide 1
+
 const canvas = document.getElementById('snow-canvas');
 const ctx = canvas.getContext('2d');
 

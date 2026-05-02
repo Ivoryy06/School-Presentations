@@ -22,7 +22,7 @@ body {
   overflow: hidden;
 }
 
-/* ── Slides ── */
+
 .slide {
   position: absolute;
   inset: 0;
@@ -189,9 +189,7 @@ body {
 .weather-card span { font-size: 1.4rem; flex-shrink: 0; }
 .weather-card strong { display: block; color: var(--light); margin-bottom: 0.2rem; }
 
-/* ══════════════════════════════
-   SLIDE 2
-══════════════════════════════ */
+
 .split-layout {
   display: flex;
   align-items: stretch;
@@ -252,9 +250,7 @@ body {
   filter: brightness(0.85) saturate(0.9);
 }
 
-/* ══════════════════════════════
-   FULL SLIDE (culture + attractions)
-══════════════════════════════ */
+
 .full-slide-content {
   display: flex;
   align-items: center;
@@ -306,9 +302,7 @@ body {
   filter: brightness(0.85) saturate(0.85);
 }
 
-/* ══════════════════════════════
-   SLIDE 3
-══════════════════════════════ */
+
 .culture-grid {
   display: flex;
   flex-direction: column;
@@ -354,9 +348,7 @@ body {
 .culture-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--light); font-weight: 600; }
 .culture-item p { font-size: 0.85rem; line-height: 1.6; color: #b8b0cc; }
 
-/* ══════════════════════════════
-   SLIDE 4
-══════════════════════════════ */
+
 .laws-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -395,9 +387,7 @@ body {
 .law-card span { font-size: 1.8rem; flex-shrink: 0; }
 .law-card p { font-size: 0.9rem; line-height: 1.7; color: #b8b0cc; }
 
-/* ══════════════════════════════
-   SLIDE 5
-══════════════════════════════ */
+
 .attract-list {
   display: flex;
   flex-direction: column;
@@ -443,9 +433,7 @@ body {
 .attract-body h3 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--light); font-weight: 600; }
 .attract-body p { font-size: 0.85rem; line-height: 1.65; color: #b8b0cc; }
 
-/* ══════════════════════════════
-   SLIDE 6
-══════════════════════════════ */
+
 .slogan-wrap {
   display: flex;
   flex-direction: column;
@@ -480,9 +468,7 @@ body {
   color: #b8b0cc;
 }
 
-/* ══════════════════════════════
-   NAVIGATION
-══════════════════════════════ */
+
 .nav {
   position: fixed;
   bottom: 2rem;

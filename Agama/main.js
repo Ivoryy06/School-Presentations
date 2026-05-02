@@ -1,4 +1,4 @@
-// ── Suffering cards accordion ──
+
 document.querySelectorAll('.suffer-card').forEach(card => {
   card.addEventListener('click', () => {
     const isActive = card.classList.contains('active');
@@ -100,7 +100,7 @@ function goTo(index) {
       el.classList.remove('anim-rise');
       el.style.animationDelay = '';
     });
-    // make slide invisible, add active, then trigger on next frame
+    
     slide.style.opacity = '0';
     slide.classList.add('active');
     requestAnimationFrame(() => {
